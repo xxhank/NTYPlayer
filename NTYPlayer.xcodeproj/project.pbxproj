@@ -62,6 +62,8 @@
 		7F3D39291F5A7F56006A6335 /* NTYXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */; };
 		7F3D392F1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */; };
 		7F3D39371F5A8BC1006A6335 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39361F5A8BC1006A6335 /* DetailViewController.m */; };
+		7F3D393D1F5A9553006A6335 /* NTYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D393A1F5A9553006A6335 /* NTYPlayer.m */; };
+		7F3D39431F5A96DA006A6335 /* NTYObserverUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */; };
 		E579B2B919BD6A8D100E3783 /* libPods-NTYPlayerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12237A7271F77DF9FAD11912 /* libPods-NTYPlayerUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +200,11 @@
 		7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCNetworkTypeMonitor.m; sourceTree = "<group>"; };
 		7F3D39351F5A8BC1006A6335 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7F3D39361F5A8BC1006A6335 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		7F3D39391F5A9553006A6335 /* NTYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPlayer.h; sourceTree = "<group>"; };
+		7F3D393A1F5A9553006A6335 /* NTYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPlayer.m; sourceTree = "<group>"; };
+		7F3D39401F5A968B006A6335 /* SpacemanBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpacemanBlocks.h; path = "../YSDQ/ysdq-ios/Vendor/SpacemanBlocks/SpacemanBlocks.h"; sourceTree = "<group>"; };
+		7F3D39411F5A96DA006A6335 /* NTYObserverUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYObserverUtility.h; sourceTree = "<group>"; };
+		7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYObserverUtility.m; sourceTree = "<group>"; };
 		8090597AF1427A6048CC4BB7 /* libPods-NTYPlayerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTYPlayerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91880D0B1B6B5178B38F2E6 /* Pods-NTYPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerTests/Pods-NTYPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3059196F499412191F86E90 /* Pods-NTYPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerUITests/Pods-NTYPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +278,7 @@
 		7F3D38251F5A7F04006A6335 /* NTYPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				7F3D39381F5A9544006A6335 /* Player */,
 				7F3D39311F5A8B1B006A6335 /* App */,
 				7F3D39301F5A8B0D006A6335 /* UI */,
 				7F3D39331F5A8B30006A6335 /* Modules */,
@@ -558,6 +566,7 @@
 		7F3D392B1F5A86AF006A6335 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				7F3D393F1F5A9595006A6335 /* SpacemanBlocks */,
 				7F3D392C1F5A86B6006A6335 /* NetworkStatus */,
 			);
 			name = Vendor;
@@ -617,6 +626,25 @@
 				7F3D39361F5A8BC1006A6335 /* DetailViewController.m */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		7F3D39381F5A9544006A6335 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D39391F5A9553006A6335 /* NTYPlayer.h */,
+				7F3D393A1F5A9553006A6335 /* NTYPlayer.m */,
+				7F3D39411F5A96DA006A6335 /* NTYObserverUtility.h */,
+				7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		7F3D393F1F5A9595006A6335 /* SpacemanBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D39401F5A968B006A6335 /* SpacemanBlocks.h */,
+			);
+			name = SpacemanBlocks;
 			sourceTree = "<group>";
 		};
 		9438A7343FADACF4C5F3CAC1 /* Frameworks */ = {
@@ -700,6 +728,7 @@
 		7F3D381B1F5A7F03006A6335 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NTY;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = ibestv;
 				TargetAttributes = {
@@ -921,6 +950,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3D39431F5A96DA006A6335 /* NTYObserverUtility.m in Sources */,
 				7F3D38F31F5A7F56006A6335 /* NSObject+Decroate.m in Sources */,
 				7F3D39231F5A7F56006A6335 /* NTYResult.m in Sources */,
 				7F3D392F1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m in Sources */,
@@ -956,6 +986,7 @@
 				7F3D39101F5A7F56006A6335 /* NTYCollectionViewCell.m in Sources */,
 				7F3D39161F5A7F56006A6335 /* NTYTableViewProxy.m in Sources */,
 				7F3D38F01F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m in Sources */,
+				7F3D393D1F5A9553006A6335 /* NTYPlayer.m in Sources */,
 				7F3D39371F5A8BC1006A6335 /* DetailViewController.m in Sources */,
 				7F3D38F41F5A7F56006A6335 /* NSObject+Safe.m in Sources */,
 				7F3D38EF1F5A7F56006A6335 /* NSData+NTYExtension.m in Sources */,
