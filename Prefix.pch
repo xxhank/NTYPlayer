@@ -1,0 +1,50 @@
+//
+//  Prefix.pch
+//  NTYPlayer
+//
+//  Created by wangchao on 2017/9/2.
+//  Copyright © 2017年 ibestv. All rights reserved.
+//
+
+#pragma once
+#import <Availability.h>
+
+#ifdef __OBJC__
+///SYSTEM
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+/// PODS
+#import <libextobjc/EXTScope.h>
+#import <libextobjc/EXTKeyPathCoding.h>
+
+#import <JRSwizzle/JRSwizzle.h>
+#import <Masonry/Masonry.h>
+
+/// NINTY
+#import "NTY_Macros.h"
+
+#import "Logger.h"
+#import "Path.h"
+#import "NTYResult.h"
+#import "Dispatch.h"
+#import "DQMemoryDetector.h"
+
+#import "UIDevice+NTYExtension.h"
+#import "NSObject+Decorate.h"
+#import "NSObject+Safe.h"
+#import "NSObject+Cast.h"
+#import "UIView+SARRS.h"
+#import "NSString+NTYExtension.h"
+#import "NSArray+NTYExtension.h"
+#import "NSDictionary+NTYExtension.h"
+#import "NSDateFormatter+NTYExtension.h"
+
+// #import "UIImage+Color.h"
+//#import "UIImageView+URL.h"
+//#import "NSString+Omit.h"
+//#import "NSUserDefaults+DQSaveSetting.h"
+//#import "UIColor+Addition.h"
+//#import "UIView+Autolayout.h"
+//#import "UIImageView+NTYWebCache.h"
+#endif

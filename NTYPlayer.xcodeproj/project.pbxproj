@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2174BC9C2F5A794070BCC64E /* libPods-NTYPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CC3E7766C1FAC632123646 /* libPods-NTYPlayer.a */; };
+		446E43A84CC92A1E8BE5C42F /* libPods-NTYPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090597AF1427A6048CC4BB7 /* libPods-NTYPlayerTests.a */; };
 		7F3D38281F5A7F04006A6335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38271F5A7F04006A6335 /* main.m */; };
 		7F3D382B1F5A7F04006A6335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D382A1F5A7F04006A6335 /* AppDelegate.m */; };
 		7F3D382E1F5A7F04006A6335 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D382D1F5A7F04006A6335 /* ViewController.m */; };
@@ -15,6 +17,51 @@
 		7F3D38361F5A7F04006A6335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D38341F5A7F04006A6335 /* LaunchScreen.storyboard */; };
 		7F3D38411F5A7F04006A6335 /* NTYPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38401F5A7F04006A6335 /* NTYPlayerTests.m */; };
 		7F3D384C1F5A7F04006A6335 /* NTYPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D384B1F5A7F04006A6335 /* NTYPlayerUITests.m */; };
+		7F3D38ED1F5A7F56006A6335 /* Dispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D385C1F5A7F56006A6335 /* Dispatch.m */; };
+		7F3D38EE1F5A7F56006A6335 /* NSArray+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D385F1F5A7F56006A6335 /* NSArray+NTYExtension.m */; };
+		7F3D38EF1F5A7F56006A6335 /* NSData+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38611F5A7F56006A6335 /* NSData+NTYExtension.m */; };
+		7F3D38F01F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38631F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m */; };
+		7F3D38F11F5A7F56006A6335 /* NSDictionary+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38651F5A7F56006A6335 /* NSDictionary+NTYExtension.m */; };
+		7F3D38F21F5A7F56006A6335 /* NSObject+Cast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38671F5A7F56006A6335 /* NSObject+Cast.m */; };
+		7F3D38F31F5A7F56006A6335 /* NSObject+Decroate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38691F5A7F56006A6335 /* NSObject+Decroate.m */; };
+		7F3D38F41F5A7F56006A6335 /* NSObject+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D386B1F5A7F56006A6335 /* NSObject+Safe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7F3D38F51F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D386D1F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.m */; };
+		7F3D38F61F5A7F56006A6335 /* NSString+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D386F1F5A7F56006A6335 /* NSString+NTYExtension.m */; };
+		7F3D38F71F5A7F56006A6335 /* NSString+NTYURLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38711F5A7F56006A6335 /* NSString+NTYURLUtility.m */; };
+		7F3D38F81F5A7F56006A6335 /* UIButton+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38731F5A7F56006A6335 /* UIButton+NTYExtension.m */; };
+		7F3D38F91F5A7F56006A6335 /* UIDevice+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38751F5A7F56006A6335 /* UIDevice+NTYExtension.m */; };
+		7F3D38FA1F5A7F56006A6335 /* UIImage+RenderingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38771F5A7F56006A6335 /* UIImage+RenderingMode.m */; };
+		7F3D38FB1F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38791F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.m */; };
+		7F3D38FC1F5A7F56006A6335 /* UINib+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D387B1F5A7F56006A6335 /* UINib+NTYExtension.m */; };
+		7F3D38FD1F5A7F56006A6335 /* UITableViewCell+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D387D1F5A7F56006A6335 /* UITableViewCell+NTYExtension.m */; };
+		7F3D38FE1F5A7F56006A6335 /* UIView+SARRS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D387F1F5A7F56006A6335 /* UIView+SARRS.m */; };
+		7F3D38FF1F5A7F56006A6335 /* JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38821F5A7F56006A6335 /* JSON.m */; };
+		7F3D39001F5A7F56006A6335 /* NTYLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38851F5A7F56006A6335 /* NTYLocation.m */; };
+		7F3D39011F5A7F56006A6335 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38881F5A7F56006A6335 /* Logger.m */; };
+		7F3D39021F5A7F56006A6335 /* DQMemoryDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D388D1F5A7F56006A6335 /* DQMemoryDetector.m */; };
+		7F3D39031F5A7F56006A6335 /* NTYPerformanceProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D388F1F5A7F56006A6335 /* NTYPerformanceProfile.m */; };
+		7F3D39041F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38911F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.m */; };
+		7F3D39051F5A7F56006A6335 /* NTYTasksExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38941F5A7F56006A6335 /* NTYTasksExecutor.m */; };
+		7F3D390F1F5A7F56006A6335 /* NTYKeyValueObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38AA1F5A7F56006A6335 /* NTYKeyValueObserver.m */; };
+		7F3D39101F5A7F56006A6335 /* NTYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38AD1F5A7F56006A6335 /* NTYCollectionViewCell.m */; };
+		7F3D39111F5A7F56006A6335 /* NTYCollectionViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38AF1F5A7F56006A6335 /* NTYCollectionViewProxy.m */; };
+		7F3D39121F5A7F56006A6335 /* NTYScrollViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38B11F5A7F56006A6335 /* NTYScrollViewProxy.m */; };
+		7F3D39131F5A7F56006A6335 /* NTYSupportViewModelImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38B41F5A7F56006A6335 /* NTYSupportViewModelImpl.m */; };
+		7F3D39141F5A7F56006A6335 /* NTYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38B61F5A7F56006A6335 /* NTYTableViewCell.m */; };
+		7F3D39151F5A7F56006A6335 /* NTYTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38B81F5A7F56006A6335 /* NTYTableViewHeaderFooterView.m */; };
+		7F3D39161F5A7F56006A6335 /* NTYTableViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38BA1F5A7F56006A6335 /* NTYTableViewProxy.m */; };
+		7F3D39201F5A7F56006A6335 /* NTYPagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38D21F5A7F56006A6335 /* NTYPagingViewController.m */; };
+		7F3D39211F5A7F56006A6335 /* NTYPagingViewControllerProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38D41F5A7F56006A6335 /* NTYPagingViewControllerProtocol.m */; };
+		7F3D39221F5A7F56006A6335 /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38D71F5A7F56006A6335 /* Path.m */; };
+		7F3D39231F5A7F56006A6335 /* NTYResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38DA1F5A7F56006A6335 /* NTYResult.m */; };
+		7F3D39241F5A7F56006A6335 /* NTYRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38DD1F5A7F56006A6335 /* NTYRouter.m */; };
+		7F3D39251F5A7F56006A6335 /* NTYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38E01F5A7F56006A6335 /* NTYTableView.m */; };
+		7F3D39261F5A7F56006A6335 /* NTYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38E31F5A7F56006A6335 /* NTYTimer.m */; };
+		7F3D39271F5A7F56006A6335 /* NTYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38E61F5A7F56006A6335 /* NTYLabel.m */; };
+		7F3D39281F5A7F56006A6335 /* NTYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38E91F5A7F56006A6335 /* NTYWeakProxy.m */; };
+		7F3D39291F5A7F56006A6335 /* NTYXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */; };
+		7F3D392F1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */; };
+		E579B2B919BD6A8D100E3783 /* libPods-NTYPlayerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12237A7271F77DF9FAD11912 /* libPods-NTYPlayerUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +82,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04CC3E7766C1FAC632123646 /* libPods-NTYPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTYPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12237A7271F77DF9FAD11912 /* libPods-NTYPlayerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTYPlayerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD2ACC5B9F52F81B831998B /* Pods-NTYPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayer/Pods-NTYPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		30EE6FAFE8C4C86302929023 /* Pods-NTYPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerUITests/Pods-NTYPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3764C0C917CC400D4C81841C /* Pods-NTYPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayer/Pods-NTYPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		47783D2F0098DC5C9066DB06 /* Pods-NTYPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerTests/Pods-NTYPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F3D38231F5A7F04006A6335 /* NTYPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTYPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3D38271F5A7F04006A6335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F3D38291F5A7F04006A6335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +104,100 @@
 		7F3D38471F5A7F04006A6335 /* NTYPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NTYPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3D384B1F5A7F04006A6335 /* NTYPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTYPlayerUITests.m; sourceTree = "<group>"; };
 		7F3D384D1F5A7F04006A6335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F3D385B1F5A7F56006A6335 /* Dispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dispatch.h; sourceTree = "<group>"; };
+		7F3D385C1F5A7F56006A6335 /* Dispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dispatch.m; sourceTree = "<group>"; };
+		7F3D385E1F5A7F56006A6335 /* NSArray+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D385F1F5A7F56006A6335 /* NSArray+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D38601F5A7F56006A6335 /* NSData+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D38611F5A7F56006A6335 /* NSData+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D38621F5A7F56006A6335 /* NSDateFormatter+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D38631F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D38641F5A7F56006A6335 /* NSDictionary+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D38651F5A7F56006A6335 /* NSDictionary+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D38661F5A7F56006A6335 /* NSObject+Cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Cast.h"; sourceTree = "<group>"; };
+		7F3D38671F5A7F56006A6335 /* NSObject+Cast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Cast.m"; sourceTree = "<group>"; };
+		7F3D38681F5A7F56006A6335 /* NSObject+Decorate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Decorate.h"; sourceTree = "<group>"; };
+		7F3D38691F5A7F56006A6335 /* NSObject+Decroate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Decroate.m"; sourceTree = "<group>"; };
+		7F3D386A1F5A7F56006A6335 /* NSObject+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Safe.h"; sourceTree = "<group>"; };
+		7F3D386B1F5A7F56006A6335 /* NSObject+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Safe.m"; sourceTree = "<group>"; };
+		7F3D386C1F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Safe_UndefinedKey.h"; sourceTree = "<group>"; };
+		7F3D386D1F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Safe_UndefinedKey.m"; sourceTree = "<group>"; };
+		7F3D386E1F5A7F56006A6335 /* NSString+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D386F1F5A7F56006A6335 /* NSString+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D38701F5A7F56006A6335 /* NSString+NTYURLUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NTYURLUtility.h"; sourceTree = "<group>"; };
+		7F3D38711F5A7F56006A6335 /* NSString+NTYURLUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NTYURLUtility.m"; sourceTree = "<group>"; };
+		7F3D38721F5A7F56006A6335 /* UIButton+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D38731F5A7F56006A6335 /* UIButton+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D38741F5A7F56006A6335 /* UIDevice+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D38751F5A7F56006A6335 /* UIDevice+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D38761F5A7F56006A6335 /* UIImage+RenderingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RenderingMode.h"; sourceTree = "<group>"; };
+		7F3D38771F5A7F56006A6335 /* UIImage+RenderingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RenderingMode.m"; sourceTree = "<group>"; };
+		7F3D38781F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+iOS7Spacing.h"; sourceTree = "<group>"; };
+		7F3D38791F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+iOS7Spacing.m"; sourceTree = "<group>"; };
+		7F3D387A1F5A7F56006A6335 /* UINib+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D387B1F5A7F56006A6335 /* UINib+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D387C1F5A7F56006A6335 /* UITableViewCell+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+NTYExtension.h"; sourceTree = "<group>"; };
+		7F3D387D1F5A7F56006A6335 /* UITableViewCell+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NTYExtension.m"; sourceTree = "<group>"; };
+		7F3D387E1F5A7F56006A6335 /* UIView+SARRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SARRS.h"; sourceTree = "<group>"; };
+		7F3D387F1F5A7F56006A6335 /* UIView+SARRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SARRS.m"; sourceTree = "<group>"; };
+		7F3D38811F5A7F56006A6335 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		7F3D38821F5A7F56006A6335 /* JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSON.m; sourceTree = "<group>"; };
+		7F3D38841F5A7F56006A6335 /* NTYLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYLocation.h; sourceTree = "<group>"; };
+		7F3D38851F5A7F56006A6335 /* NTYLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYLocation.m; sourceTree = "<group>"; };
+		7F3D38871F5A7F56006A6335 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		7F3D38881F5A7F56006A6335 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
+		7F3D388A1F5A7F56006A6335 /* NTY_Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTY_Macros.h; sourceTree = "<group>"; };
+		7F3D388C1F5A7F56006A6335 /* DQMemoryDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMemoryDetector.h; sourceTree = "<group>"; };
+		7F3D388D1F5A7F56006A6335 /* DQMemoryDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMemoryDetector.m; sourceTree = "<group>"; };
+		7F3D388E1F5A7F56006A6335 /* NTYPerformanceProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPerformanceProfile.h; sourceTree = "<group>"; };
+		7F3D388F1F5A7F56006A6335 /* NTYPerformanceProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPerformanceProfile.m; sourceTree = "<group>"; };
+		7F3D38901F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+NTY_MemoryLeakDetect.h"; sourceTree = "<group>"; };
+		7F3D38911F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+NTY_MemoryLeakDetect.m"; sourceTree = "<group>"; };
+		7F3D38931F5A7F56006A6335 /* NTYTasksExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYTasksExecutor.h; sourceTree = "<group>"; };
+		7F3D38941F5A7F56006A6335 /* NTYTasksExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYTasksExecutor.m; sourceTree = "<group>"; };
+		7F3D38A91F5A7F56006A6335 /* NTYKeyValueObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYKeyValueObserver.h; sourceTree = "<group>"; };
+		7F3D38AA1F5A7F56006A6335 /* NTYKeyValueObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYKeyValueObserver.m; sourceTree = "<group>"; };
+		7F3D38AC1F5A7F56006A6335 /* NTYCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYCollectionViewCell.h; sourceTree = "<group>"; };
+		7F3D38AD1F5A7F56006A6335 /* NTYCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYCollectionViewCell.m; sourceTree = "<group>"; };
+		7F3D38AE1F5A7F56006A6335 /* NTYCollectionViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYCollectionViewProxy.h; sourceTree = "<group>"; };
+		7F3D38AF1F5A7F56006A6335 /* NTYCollectionViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYCollectionViewProxy.m; sourceTree = "<group>"; };
+		7F3D38B01F5A7F56006A6335 /* NTYScrollViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYScrollViewProxy.h; sourceTree = "<group>"; };
+		7F3D38B11F5A7F56006A6335 /* NTYScrollViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYScrollViewProxy.m; sourceTree = "<group>"; };
+		7F3D38B21F5A7F56006A6335 /* NTYSupportViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYSupportViewModel.h; sourceTree = "<group>"; };
+		7F3D38B31F5A7F56006A6335 /* NTYSupportViewModelImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYSupportViewModelImpl.h; sourceTree = "<group>"; };
+		7F3D38B41F5A7F56006A6335 /* NTYSupportViewModelImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYSupportViewModelImpl.m; sourceTree = "<group>"; };
+		7F3D38B51F5A7F56006A6335 /* NTYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYTableViewCell.h; sourceTree = "<group>"; };
+		7F3D38B61F5A7F56006A6335 /* NTYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYTableViewCell.m; sourceTree = "<group>"; };
+		7F3D38B71F5A7F56006A6335 /* NTYTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		7F3D38B81F5A7F56006A6335 /* NTYTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		7F3D38B91F5A7F56006A6335 /* NTYTableViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYTableViewProxy.h; sourceTree = "<group>"; };
+		7F3D38BA1F5A7F56006A6335 /* NTYTableViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYTableViewProxy.m; sourceTree = "<group>"; };
+		7F3D38D11F5A7F56006A6335 /* NTYPagingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPagingViewController.h; sourceTree = "<group>"; };
+		7F3D38D21F5A7F56006A6335 /* NTYPagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPagingViewController.m; sourceTree = "<group>"; };
+		7F3D38D31F5A7F56006A6335 /* NTYPagingViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPagingViewControllerProtocol.h; sourceTree = "<group>"; };
+		7F3D38D41F5A7F56006A6335 /* NTYPagingViewControllerProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPagingViewControllerProtocol.m; sourceTree = "<group>"; };
+		7F3D38D61F5A7F56006A6335 /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
+		7F3D38D71F5A7F56006A6335 /* Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Path.m; sourceTree = "<group>"; };
+		7F3D38D91F5A7F56006A6335 /* NTYResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYResult.h; sourceTree = "<group>"; };
+		7F3D38DA1F5A7F56006A6335 /* NTYResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYResult.m; sourceTree = "<group>"; };
+		7F3D38DC1F5A7F56006A6335 /* NTYRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYRouter.h; sourceTree = "<group>"; };
+		7F3D38DD1F5A7F56006A6335 /* NTYRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYRouter.m; sourceTree = "<group>"; };
+		7F3D38DF1F5A7F56006A6335 /* NTYTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYTableView.h; sourceTree = "<group>"; };
+		7F3D38E01F5A7F56006A6335 /* NTYTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYTableView.m; sourceTree = "<group>"; };
+		7F3D38E21F5A7F56006A6335 /* NTYTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYTimer.h; sourceTree = "<group>"; };
+		7F3D38E31F5A7F56006A6335 /* NTYTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYTimer.m; sourceTree = "<group>"; };
+		7F3D38E51F5A7F56006A6335 /* NTYLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYLabel.h; sourceTree = "<group>"; };
+		7F3D38E61F5A7F56006A6335 /* NTYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYLabel.m; sourceTree = "<group>"; };
+		7F3D38E81F5A7F56006A6335 /* NTYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYWeakProxy.h; sourceTree = "<group>"; };
+		7F3D38E91F5A7F56006A6335 /* NTYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYWeakProxy.m; sourceTree = "<group>"; };
+		7F3D38EB1F5A7F56006A6335 /* NTYXibView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYXibView.h; sourceTree = "<group>"; };
+		7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYXibView.m; sourceTree = "<group>"; };
+		7F3D392A1F5A7F80006A6335 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ../Prefix.pch; sourceTree = "<group>"; };
+		7F3D392D1F5A86B6006A6335 /* MSCNetworkTypeMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCNetworkTypeMonitor.h; sourceTree = "<group>"; };
+		7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCNetworkTypeMonitor.m; sourceTree = "<group>"; };
+		8090597AF1427A6048CC4BB7 /* libPods-NTYPlayerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTYPlayerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91880D0B1B6B5178B38F2E6 /* Pods-NTYPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerTests/Pods-NTYPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3059196F499412191F86E90 /* Pods-NTYPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerUITests/Pods-NTYPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2174BC9C2F5A794070BCC64E /* libPods-NTYPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446E43A84CC92A1E8BE5C42F /* libPods-NTYPlayerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,19 +221,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E579B2B919BD6A8D100E3783 /* libPods-NTYPlayerUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58F8F276787BAF4E88EE4989 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3764C0C917CC400D4C81841C /* Pods-NTYPlayer.debug.xcconfig */,
+				2BD2ACC5B9F52F81B831998B /* Pods-NTYPlayer.release.xcconfig */,
+				C91880D0B1B6B5178B38F2E6 /* Pods-NTYPlayerTests.debug.xcconfig */,
+				47783D2F0098DC5C9066DB06 /* Pods-NTYPlayerTests.release.xcconfig */,
+				D3059196F499412191F86E90 /* Pods-NTYPlayerUITests.debug.xcconfig */,
+				30EE6FAFE8C4C86302929023 /* Pods-NTYPlayerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7F3D381A1F5A7F03006A6335 = {
 			isa = PBXGroup;
 			children = (
+				7F3D392B1F5A86AF006A6335 /* Vendor */,
+				7F3D38591F5A7F56006A6335 /* Ninty */,
 				7F3D38251F5A7F04006A6335 /* NTYPlayer */,
 				7F3D383F1F5A7F04006A6335 /* NTYPlayerTests */,
 				7F3D384A1F5A7F04006A6335 /* NTYPlayerUITests */,
 				7F3D38241F5A7F04006A6335 /* Products */,
+				58F8F276787BAF4E88EE4989 /* Pods */,
+				9438A7343FADACF4C5F3CAC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +284,7 @@
 		7F3D38261F5A7F04006A6335 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F3D392A1F5A7F80006A6335 /* Prefix.pch */,
 				7F3D38271F5A7F04006A6335 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -140,6 +308,282 @@
 			path = NTYPlayerUITests;
 			sourceTree = "<group>";
 		};
+		7F3D38591F5A7F56006A6335 /* Ninty */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D385A1F5A7F56006A6335 /* Dispatch */,
+				7F3D385D1F5A7F56006A6335 /* Extension */,
+				7F3D38801F5A7F56006A6335 /* JSON */,
+				7F3D38831F5A7F56006A6335 /* Location */,
+				7F3D38861F5A7F56006A6335 /* Logger */,
+				7F3D38891F5A7F56006A6335 /* Macros */,
+				7F3D388B1F5A7F56006A6335 /* MemoryDetector */,
+				7F3D38921F5A7F56006A6335 /* MultiTasks */,
+				7F3D38A81F5A7F56006A6335 /* NTYKeyValueObserver */,
+				7F3D38AB1F5A7F56006A6335 /* NTYTableViewProxy */,
+				7F3D38D01F5A7F56006A6335 /* PagingViewController */,
+				7F3D38D51F5A7F56006A6335 /* Path */,
+				7F3D38D81F5A7F56006A6335 /* Result */,
+				7F3D38DB1F5A7F56006A6335 /* Router */,
+				7F3D38DE1F5A7F56006A6335 /* TableView */,
+				7F3D38E11F5A7F56006A6335 /* Timer */,
+				7F3D38E41F5A7F56006A6335 /* View */,
+				7F3D38E71F5A7F56006A6335 /* WeakProxy */,
+				7F3D38EA1F5A7F56006A6335 /* XibView */,
+			);
+			name = Ninty;
+			path = "../YSDQ/ysdq-ios/Le123PhoneClient/Ninty";
+			sourceTree = "<group>";
+		};
+		7F3D385A1F5A7F56006A6335 /* Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D385B1F5A7F56006A6335 /* Dispatch.h */,
+				7F3D385C1F5A7F56006A6335 /* Dispatch.m */,
+			);
+			path = Dispatch;
+			sourceTree = "<group>";
+		};
+		7F3D385D1F5A7F56006A6335 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D385E1F5A7F56006A6335 /* NSArray+NTYExtension.h */,
+				7F3D385F1F5A7F56006A6335 /* NSArray+NTYExtension.m */,
+				7F3D38601F5A7F56006A6335 /* NSData+NTYExtension.h */,
+				7F3D38611F5A7F56006A6335 /* NSData+NTYExtension.m */,
+				7F3D38621F5A7F56006A6335 /* NSDateFormatter+NTYExtension.h */,
+				7F3D38631F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m */,
+				7F3D38641F5A7F56006A6335 /* NSDictionary+NTYExtension.h */,
+				7F3D38651F5A7F56006A6335 /* NSDictionary+NTYExtension.m */,
+				7F3D38661F5A7F56006A6335 /* NSObject+Cast.h */,
+				7F3D38671F5A7F56006A6335 /* NSObject+Cast.m */,
+				7F3D38681F5A7F56006A6335 /* NSObject+Decorate.h */,
+				7F3D38691F5A7F56006A6335 /* NSObject+Decroate.m */,
+				7F3D386A1F5A7F56006A6335 /* NSObject+Safe.h */,
+				7F3D386B1F5A7F56006A6335 /* NSObject+Safe.m */,
+				7F3D386C1F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.h */,
+				7F3D386D1F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.m */,
+				7F3D386E1F5A7F56006A6335 /* NSString+NTYExtension.h */,
+				7F3D386F1F5A7F56006A6335 /* NSString+NTYExtension.m */,
+				7F3D38701F5A7F56006A6335 /* NSString+NTYURLUtility.h */,
+				7F3D38711F5A7F56006A6335 /* NSString+NTYURLUtility.m */,
+				7F3D38721F5A7F56006A6335 /* UIButton+NTYExtension.h */,
+				7F3D38731F5A7F56006A6335 /* UIButton+NTYExtension.m */,
+				7F3D38741F5A7F56006A6335 /* UIDevice+NTYExtension.h */,
+				7F3D38751F5A7F56006A6335 /* UIDevice+NTYExtension.m */,
+				7F3D38761F5A7F56006A6335 /* UIImage+RenderingMode.h */,
+				7F3D38771F5A7F56006A6335 /* UIImage+RenderingMode.m */,
+				7F3D38781F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.h */,
+				7F3D38791F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.m */,
+				7F3D387A1F5A7F56006A6335 /* UINib+NTYExtension.h */,
+				7F3D387B1F5A7F56006A6335 /* UINib+NTYExtension.m */,
+				7F3D387C1F5A7F56006A6335 /* UITableViewCell+NTYExtension.h */,
+				7F3D387D1F5A7F56006A6335 /* UITableViewCell+NTYExtension.m */,
+				7F3D387E1F5A7F56006A6335 /* UIView+SARRS.h */,
+				7F3D387F1F5A7F56006A6335 /* UIView+SARRS.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7F3D38801F5A7F56006A6335 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38811F5A7F56006A6335 /* JSON.h */,
+				7F3D38821F5A7F56006A6335 /* JSON.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		7F3D38831F5A7F56006A6335 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38841F5A7F56006A6335 /* NTYLocation.h */,
+				7F3D38851F5A7F56006A6335 /* NTYLocation.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		7F3D38861F5A7F56006A6335 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38871F5A7F56006A6335 /* Logger.h */,
+				7F3D38881F5A7F56006A6335 /* Logger.m */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		7F3D38891F5A7F56006A6335 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D388A1F5A7F56006A6335 /* NTY_Macros.h */,
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		7F3D388B1F5A7F56006A6335 /* MemoryDetector */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D388C1F5A7F56006A6335 /* DQMemoryDetector.h */,
+				7F3D388D1F5A7F56006A6335 /* DQMemoryDetector.m */,
+				7F3D388E1F5A7F56006A6335 /* NTYPerformanceProfile.h */,
+				7F3D388F1F5A7F56006A6335 /* NTYPerformanceProfile.m */,
+				7F3D38901F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.h */,
+				7F3D38911F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.m */,
+			);
+			path = MemoryDetector;
+			sourceTree = "<group>";
+		};
+		7F3D38921F5A7F56006A6335 /* MultiTasks */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38931F5A7F56006A6335 /* NTYTasksExecutor.h */,
+				7F3D38941F5A7F56006A6335 /* NTYTasksExecutor.m */,
+			);
+			path = MultiTasks;
+			sourceTree = "<group>";
+		};
+		7F3D38A81F5A7F56006A6335 /* NTYKeyValueObserver */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38A91F5A7F56006A6335 /* NTYKeyValueObserver.h */,
+				7F3D38AA1F5A7F56006A6335 /* NTYKeyValueObserver.m */,
+			);
+			path = NTYKeyValueObserver;
+			sourceTree = "<group>";
+		};
+		7F3D38AB1F5A7F56006A6335 /* NTYTableViewProxy */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38AC1F5A7F56006A6335 /* NTYCollectionViewCell.h */,
+				7F3D38AD1F5A7F56006A6335 /* NTYCollectionViewCell.m */,
+				7F3D38AE1F5A7F56006A6335 /* NTYCollectionViewProxy.h */,
+				7F3D38AF1F5A7F56006A6335 /* NTYCollectionViewProxy.m */,
+				7F3D38B01F5A7F56006A6335 /* NTYScrollViewProxy.h */,
+				7F3D38B11F5A7F56006A6335 /* NTYScrollViewProxy.m */,
+				7F3D38B21F5A7F56006A6335 /* NTYSupportViewModel.h */,
+				7F3D38B31F5A7F56006A6335 /* NTYSupportViewModelImpl.h */,
+				7F3D38B41F5A7F56006A6335 /* NTYSupportViewModelImpl.m */,
+				7F3D38B51F5A7F56006A6335 /* NTYTableViewCell.h */,
+				7F3D38B61F5A7F56006A6335 /* NTYTableViewCell.m */,
+				7F3D38B71F5A7F56006A6335 /* NTYTableViewHeaderFooterView.h */,
+				7F3D38B81F5A7F56006A6335 /* NTYTableViewHeaderFooterView.m */,
+				7F3D38B91F5A7F56006A6335 /* NTYTableViewProxy.h */,
+				7F3D38BA1F5A7F56006A6335 /* NTYTableViewProxy.m */,
+			);
+			path = NTYTableViewProxy;
+			sourceTree = "<group>";
+		};
+		7F3D38D01F5A7F56006A6335 /* PagingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38D11F5A7F56006A6335 /* NTYPagingViewController.h */,
+				7F3D38D21F5A7F56006A6335 /* NTYPagingViewController.m */,
+				7F3D38D31F5A7F56006A6335 /* NTYPagingViewControllerProtocol.h */,
+				7F3D38D41F5A7F56006A6335 /* NTYPagingViewControllerProtocol.m */,
+			);
+			path = PagingViewController;
+			sourceTree = "<group>";
+		};
+		7F3D38D51F5A7F56006A6335 /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38D61F5A7F56006A6335 /* Path.h */,
+				7F3D38D71F5A7F56006A6335 /* Path.m */,
+			);
+			path = Path;
+			sourceTree = "<group>";
+		};
+		7F3D38D81F5A7F56006A6335 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38D91F5A7F56006A6335 /* NTYResult.h */,
+				7F3D38DA1F5A7F56006A6335 /* NTYResult.m */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		7F3D38DB1F5A7F56006A6335 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38DC1F5A7F56006A6335 /* NTYRouter.h */,
+				7F3D38DD1F5A7F56006A6335 /* NTYRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7F3D38DE1F5A7F56006A6335 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38DF1F5A7F56006A6335 /* NTYTableView.h */,
+				7F3D38E01F5A7F56006A6335 /* NTYTableView.m */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		7F3D38E11F5A7F56006A6335 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38E21F5A7F56006A6335 /* NTYTimer.h */,
+				7F3D38E31F5A7F56006A6335 /* NTYTimer.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		7F3D38E41F5A7F56006A6335 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38E51F5A7F56006A6335 /* NTYLabel.h */,
+				7F3D38E61F5A7F56006A6335 /* NTYLabel.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F3D38E71F5A7F56006A6335 /* WeakProxy */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38E81F5A7F56006A6335 /* NTYWeakProxy.h */,
+				7F3D38E91F5A7F56006A6335 /* NTYWeakProxy.m */,
+			);
+			path = WeakProxy;
+			sourceTree = "<group>";
+		};
+		7F3D38EA1F5A7F56006A6335 /* XibView */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D38EB1F5A7F56006A6335 /* NTYXibView.h */,
+				7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */,
+			);
+			path = XibView;
+			sourceTree = "<group>";
+		};
+		7F3D392B1F5A86AF006A6335 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D392C1F5A86B6006A6335 /* NetworkStatus */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		7F3D392C1F5A86B6006A6335 /* NetworkStatus */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D392D1F5A86B6006A6335 /* MSCNetworkTypeMonitor.h */,
+				7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */,
+			);
+			name = NetworkStatus;
+			path = "../YSDQ/ysdq-ios/Vendor/NetworkStatus";
+			sourceTree = "<group>";
+		};
+		9438A7343FADACF4C5F3CAC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04CC3E7766C1FAC632123646 /* libPods-NTYPlayer.a */,
+				8090597AF1427A6048CC4BB7 /* libPods-NTYPlayerTests.a */,
+				12237A7271F77DF9FAD11912 /* libPods-NTYPlayerUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +591,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F3D38501F5A7F04006A6335 /* Build configuration list for PBXNativeTarget "NTYPlayer" */;
 			buildPhases = (
+				E8C83D0E0A703333800836B0 /* [CP] Check Pods Manifest.lock */,
 				7F3D381F1F5A7F04006A6335 /* Sources */,
 				7F3D38201F5A7F04006A6335 /* Frameworks */,
 				7F3D38211F5A7F04006A6335 /* Resources */,
+				043FF2046A5A79A1CA569940 /* [CP] Embed Pods Frameworks */,
+				40DA23FEB66BFE4D5BB93070 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +611,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F3D38531F5A7F04006A6335 /* Build configuration list for PBXNativeTarget "NTYPlayerTests" */;
 			buildPhases = (
+				E9BB00427CEDD44852CA98C1 /* [CP] Check Pods Manifest.lock */,
 				7F3D38381F5A7F04006A6335 /* Sources */,
 				7F3D38391F5A7F04006A6335 /* Frameworks */,
 				7F3D383A1F5A7F04006A6335 /* Resources */,
+				15A7CA5F1075B42F77A1CA67 /* [CP] Embed Pods Frameworks */,
+				606D2296CB4768AC0FE3CDA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +632,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F3D38561F5A7F04006A6335 /* Build configuration list for PBXNativeTarget "NTYPlayerUITests" */;
 			buildPhases = (
+				63F9CE22B8AAD1550E62E886 /* [CP] Check Pods Manifest.lock */,
 				7F3D38431F5A7F04006A6335 /* Sources */,
 				7F3D38441F5A7F04006A6335 /* Frameworks */,
 				7F3D38451F5A7F04006A6335 /* Resources */,
+				19901075F41AABE2A2406B84 /* [CP] Embed Pods Frameworks */,
+				FA838B895063848F18B9FAF5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,14 +724,205 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		043FF2046A5A79A1CA569940 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTYPlayer/Pods-NTYPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15A7CA5F1075B42F77A1CA67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTYPlayerTests/Pods-NTYPlayerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19901075F41AABE2A2406B84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTYPlayerUITests/Pods-NTYPlayerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40DA23FEB66BFE4D5BB93070 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTYPlayer/Pods-NTYPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		606D2296CB4768AC0FE3CDA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTYPlayerTests/Pods-NTYPlayerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63F9CE22B8AAD1550E62E886 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NTYPlayerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8C83D0E0A703333800836B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NTYPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9BB00427CEDD44852CA98C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NTYPlayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA838B895063848F18B9FAF5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTYPlayerUITests/Pods-NTYPlayerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F3D381F1F5A7F04006A6335 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3D38F31F5A7F56006A6335 /* NSObject+Decroate.m in Sources */,
+				7F3D39231F5A7F56006A6335 /* NTYResult.m in Sources */,
+				7F3D392F1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m in Sources */,
+				7F3D39131F5A7F56006A6335 /* NTYSupportViewModelImpl.m in Sources */,
+				7F3D38FD1F5A7F56006A6335 /* UITableViewCell+NTYExtension.m in Sources */,
+				7F3D38F11F5A7F56006A6335 /* NSDictionary+NTYExtension.m in Sources */,
+				7F3D38F81F5A7F56006A6335 /* UIButton+NTYExtension.m in Sources */,
+				7F3D39141F5A7F56006A6335 /* NTYTableViewCell.m in Sources */,
+				7F3D38F91F5A7F56006A6335 /* UIDevice+NTYExtension.m in Sources */,
 				7F3D382E1F5A7F04006A6335 /* ViewController.m in Sources */,
+				7F3D38F51F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.m in Sources */,
+				7F3D390F1F5A7F56006A6335 /* NTYKeyValueObserver.m in Sources */,
+				7F3D39151F5A7F56006A6335 /* NTYTableViewHeaderFooterView.m in Sources */,
+				7F3D39281F5A7F56006A6335 /* NTYWeakProxy.m in Sources */,
+				7F3D38FF1F5A7F56006A6335 /* JSON.m in Sources */,
+				7F3D38ED1F5A7F56006A6335 /* Dispatch.m in Sources */,
+				7F3D38EE1F5A7F56006A6335 /* NSArray+NTYExtension.m in Sources */,
+				7F3D39001F5A7F56006A6335 /* NTYLocation.m in Sources */,
+				7F3D39121F5A7F56006A6335 /* NTYScrollViewProxy.m in Sources */,
+				7F3D39201F5A7F56006A6335 /* NTYPagingViewController.m in Sources */,
+				7F3D39211F5A7F56006A6335 /* NTYPagingViewControllerProtocol.m in Sources */,
+				7F3D38FB1F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.m in Sources */,
+				7F3D39261F5A7F56006A6335 /* NTYTimer.m in Sources */,
+				7F3D39291F5A7F56006A6335 /* NTYXibView.m in Sources */,
+				7F3D39021F5A7F56006A6335 /* DQMemoryDetector.m in Sources */,
 				7F3D382B1F5A7F04006A6335 /* AppDelegate.m in Sources */,
+				7F3D39031F5A7F56006A6335 /* NTYPerformanceProfile.m in Sources */,
+				7F3D39241F5A7F56006A6335 /* NTYRouter.m in Sources */,
+				7F3D39251F5A7F56006A6335 /* NTYTableView.m in Sources */,
+				7F3D39041F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.m in Sources */,
+				7F3D38FE1F5A7F56006A6335 /* UIView+SARRS.m in Sources */,
+				7F3D39051F5A7F56006A6335 /* NTYTasksExecutor.m in Sources */,
+				7F3D39101F5A7F56006A6335 /* NTYCollectionViewCell.m in Sources */,
+				7F3D39161F5A7F56006A6335 /* NTYTableViewProxy.m in Sources */,
+				7F3D38F01F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m in Sources */,
+				7F3D38F41F5A7F56006A6335 /* NSObject+Safe.m in Sources */,
+				7F3D38EF1F5A7F56006A6335 /* NSData+NTYExtension.m in Sources */,
+				7F3D38F71F5A7F56006A6335 /* NSString+NTYURLUtility.m in Sources */,
+				7F3D39111F5A7F56006A6335 /* NTYCollectionViewProxy.m in Sources */,
+				7F3D38F21F5A7F56006A6335 /* NSObject+Cast.m in Sources */,
+				7F3D39011F5A7F56006A6335 /* Logger.m in Sources */,
+				7F3D38FC1F5A7F56006A6335 /* UINib+NTYExtension.m in Sources */,
+				7F3D38FA1F5A7F56006A6335 /* UIImage+RenderingMode.m in Sources */,
+				7F3D39221F5A7F56006A6335 /* Path.m in Sources */,
+				7F3D38F61F5A7F56006A6335 /* NSString+NTYExtension.m in Sources */,
 				7F3D38281F5A7F04006A6335 /* main.m in Sources */,
+				7F3D39271F5A7F56006A6335 /* NTYLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,30 +1071,49 @@
 		};
 		7F3D38511F5A7F04006A6335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3764C0C917CC400D4C81841C /* Pods-NTYPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N24PWNMG2G;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
 				INFOPLIST_FILE = NTYPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ibestv.NTYPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wundef",
+					"-Werror=objc-missing-super-calls",
+					"-Werror=incompatible-pointer-types",
+				);
 			};
 			name = Debug;
 		};
 		7F3D38521F5A7F04006A6335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD2ACC5B9F52F81B831998B /* Pods-NTYPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N24PWNMG2G;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
 				INFOPLIST_FILE = NTYPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ibestv.NTYPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wundef",
+					"-Werror=objc-missing-super-calls",
+					"-Werror=incompatible-pointer-types",
+				);
 			};
 			name = Release;
 		};
 		7F3D38541F5A7F04006A6335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91880D0B1B6B5178B38F2E6 /* Pods-NTYPlayerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N24PWNMG2G;
@@ -464,6 +1127,7 @@
 		};
 		7F3D38551F5A7F04006A6335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47783D2F0098DC5C9066DB06 /* Pods-NTYPlayerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N24PWNMG2G;
@@ -477,6 +1141,7 @@
 		};
 		7F3D38571F5A7F04006A6335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3059196F499412191F86E90 /* Pods-NTYPlayerUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N24PWNMG2G;
 				INFOPLIST_FILE = NTYPlayerUITests/Info.plist;
@@ -489,6 +1154,7 @@
 		};
 		7F3D38581F5A7F04006A6335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30EE6FAFE8C4C86302929023 /* Pods-NTYPlayerUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N24PWNMG2G;
 				INFOPLIST_FILE = NTYPlayerUITests/Info.plist;
@@ -518,6 +1184,7 @@
 				7F3D38521F5A7F04006A6335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F3D38531F5A7F04006A6335 /* Build configuration list for PBXNativeTarget "NTYPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +1193,7 @@
 				7F3D38551F5A7F04006A6335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F3D38561F5A7F04006A6335 /* Build configuration list for PBXNativeTarget "NTYPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +1202,7 @@
 				7F3D38581F5A7F04006A6335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
