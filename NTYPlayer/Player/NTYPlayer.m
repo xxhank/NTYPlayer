@@ -132,7 +132,7 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
     self.render.player = nil;
 }
 
-#pragma mark - Property
+#pragma mark - Render
 - (UIView*)contentView {return self.render;}
 #pragma mark - Interface
 - (void)playWithURLs:(NSArray<NSString*>*)urls
@@ -244,6 +244,47 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
         }];
     }
 }
+
+- (void)stop {
+    [self.player pause];
+    [self.player replaceCurrentItemWithPlayerItem:nil];
+}
+
+- (void)pause {
+    self.state = NTYPlayerStatePaused;
+    [self.player pause];
+}
+
+- (void)resume {
+    self.state = NTYPlayerStatePlaying;
+    [self.player play];
+}
+
+- (void)seek:(NSTimeInterval)position {
+    NSLogInfo(@"%f", position);
+    NSArray<NSNumber*> *values               = [self segment_locate:position];
+    NSUInteger          segment_currentIndex = [values[0] unsignedIntegerValue];
+    CGFloat             segment_position     = [values[1] doubleValue];
+
+    /// 同一段流seek
+    if (segment_currentIndex == self.segment_currentIndex) {
+        NSLogInfo(@"player seek in same segments:%@.", values);
+        [self.playingItem seekToTime:CMTimeMakeWithSeconds(segment_position, NSEC_PER_SEC)
+                     toleranceBefore:self.tolerance
+                      toleranceAfter:self.tolerance
+                   completionHandler:^(BOOL finished) {
+            NSLogInfo(@"%@", @(finished));
+        }];
+    } else {
+        NSLogInfo(@"player seek new segment: %@.", values);
+        self.segment_currentIndex = segment_currentIndex;
+        self.segment_position     = segment_position;
+        [self playSegment];
+    }
+}
+
+
+#pragma mark -
 - (void)processDurations {
     self.segment_previousTotalDurations = [NSMutableArray arrayWithCapacity:self.urls.count];
     NSTimeInterval totalDuration = 0;
@@ -323,47 +364,8 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
     }
 }
 
-- (void)stop {
-    [self.player pause];
-    [self.player replaceCurrentItemWithPlayerItem:nil];
-}
-
-- (void)pause {
-    self.state = NTYPlayerStatePaused;
-    [self.player pause];
-}
-
-- (void)resume {
-    self.state = NTYPlayerStatePlaying;
-    [self.player play];
-}
-
-- (void)seek:(NSTimeInterval)position {
-    NSLogInfo(@"%f", position);
-    NSArray<NSNumber*> *values               = [self segment_locate:position];
-    NSUInteger          segment_currentIndex = [values[0] unsignedIntegerValue];
-    CGFloat             segment_position     = [values[1] doubleValue];
-
-    /// 同一段流seek
-    if (segment_currentIndex == self.segment_currentIndex) {
-        NSLogInfo(@"player seek in same segments:%@.", values);
-        [self.playingItem seekToTime:CMTimeMakeWithSeconds(segment_position, NSEC_PER_SEC)
-                     toleranceBefore:self.tolerance
-                      toleranceAfter:self.tolerance
-                   completionHandler:^(BOOL finished) {
-            NSLogInfo(@"%@", @(finished));
-        }];
-    } else {
-        NSLogInfo(@"player seek new segment: %@.", values);
-        self.segment_currentIndex = segment_currentIndex;
-        self.segment_position     = segment_position;
-        [self playSegment];
-    }
-}
-
-
 #pragma mark - segment
-NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*durations) {
+NSArray<NSNumber*>*findIndexAndOffsetForPositonInDurations(NSTimeInterval position, NSArray<NSNumber*>*durations) {
     NSUInteger     segment_currentIndex = 0;
     NSTimeInterval segment_position     = 0;
 
@@ -393,7 +395,7 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
 }
 
 - (NSArray<NSNumber*>*)segment_locate:(NSTimeInterval)position {
-    NSArray<NSNumber*>*result = calculateOffset(position, self.durations);
+    NSArray<NSNumber*>*result = findIndexAndOffsetForPositonInDurations(position, self.durations);
     NSLogInfo(@"player %@", result);
     return result;
 }
@@ -416,7 +418,7 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
     return self.volumeSlider.value;
 }
 
-#pragma mark -
+#pragma mark - Player State
 - (void)setupObservers {
     CMTime interval = CMTimeMakeWithSeconds(1, NSEC_PER_SEC);
     if (self.periodicTimeObserver) {
@@ -438,7 +440,7 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
 
     [self.observers removeAllObjects];
 
-    NTYNotificationObserver *gd1 = [[NTYNotificationObserver alloc] initWithName:AVPlayerItemDidPlayToEndTimeNotification source:self.playingItem action:^(NSNotification *notification) {
+    NTYNotificationObserver *playFinishedObserver = [[NTYNotificationObserver alloc] initWithName:AVPlayerItemDidPlayToEndTimeNotification source:self.playingItem action:^(NSNotification *notification) {
         @strongify(self);if (!self) {return;}
         self.state = NTYPlayerStateFinished;
         if (self.segment_currentIndex < self.urls.count - 1) {
@@ -454,9 +456,9 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
             }
         }
     }];
-    [self.observers addObject:gd1];
+    [self.observers addObject:playFinishedObserver];
 
-    NTYNotificationObserver *gd2 = [[NTYNotificationObserver alloc] initWithName:AVPlayerItemFailedToPlayToEndTimeNotification source:self.playingItem action:^(NSNotification *notification) {
+    NTYNotificationObserver *playFailedObserver = [[NTYNotificationObserver alloc] initWithName:AVPlayerItemFailedToPlayToEndTimeNotification source:self.playingItem action:^(NSNotification *notification) {
         @strongify(self);if (!self) {return;}
         // [self _dealErrorWithMsg:@"Failed To Play To End"];
         self.state = NTYPlayerStateFailed;
@@ -468,7 +470,7 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
         } else {
         }
     }];
-    [self.observers addObject:gd2];
+    [self.observers addObject:playFailedObserver];
 
    #if 0 /// 播放器不应该关心是否切入到后台
     // https://developer.apple.com/library/ios/qa/qa1668/_index.html
@@ -491,7 +493,7 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
     [self.observers addObject:gd4];
    #endif // if 0
 
-    NTYSingleKeyValueObserver *d1 = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"playbackBufferEmpty" target:self.playingItem action:^(id newValue, id oldValue) {
+    NTYSingleKeyValueObserver *playerNeedBufferObserver = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"playbackBufferEmpty" target:self.playingItem action:^(id newValue, id oldValue) {
         @strongify(self);if (!self) {return;}
         if ([newValue boolValue]) {
             self.bufferState = NTYPlayerBufferStateBuffering;
@@ -502,9 +504,9 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
             }
         }
     }];
-    [self.observers addObject:d1];
+    [self.observers addObject:playerNeedBufferObserver];
 
-    NTYSingleKeyValueObserver *d2 = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"playbackLikelyToKeepUp" target:self.playingItem action:^(id newValue, id oldValue) {
+    NTYSingleKeyValueObserver *playerGotEnoughDataObserver = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"playbackLikelyToKeepUp" target:self.playingItem action:^(id newValue, id oldValue) {
         @strongify(self);if (!self) {return;}
         if ([newValue boolValue]) {
             self.bufferState = NTYPlayerBufferStateFinished;
@@ -516,9 +518,9 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
             self.bufferState = NTYPlayerBufferStateWaiting;
         }
     }];
-    [self.observers addObject:d2];
+    [self.observers addObject:playerGotEnoughDataObserver];
 
-    NTYSingleKeyValueObserver *d3 = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"loadedTimeRanges" target:self.playingItem action:^(id newValue, id oldValue) {
+    NTYSingleKeyValueObserver *playerBufferedSizeObserver = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"loadedTimeRanges" target:self.playingItem action:^(id newValue, id oldValue) {
         @strongify(self);if (!self) {return;}
         CMTimeRange timeRange = [[newValue lastObject] CMTimeRangeValue];
         if (CMTIME_IS_INDEFINITE(timeRange.start) || CMTIME_IS_INDEFINITE(timeRange.duration)) {
@@ -533,6 +535,6 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
         // 更新timeBuffered
         self.timeBuffered = result;
     }];
-    [self.observers addObject:d3];
+    [self.observers addObject:playerBufferedSizeObserver];
 }
 @end
