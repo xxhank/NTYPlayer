@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2174BC9C2F5A794070BCC64E /* libPods-NTYPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CC3E7766C1FAC632123646 /* libPods-NTYPlayer.a */; };
 		446E43A84CC92A1E8BE5C42F /* libPods-NTYPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090597AF1427A6048CC4BB7 /* libPods-NTYPlayerTests.a */; };
-		7F3D38281F5A7F04006A6335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38271F5A7F04006A6335 /* main.m */; };
+		7F3D38281F5A7F04006A6335 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38271F5A7F04006A6335 /* main.mm */; };
 		7F3D382B1F5A7F04006A6335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D382A1F5A7F04006A6335 /* AppDelegate.m */; };
 		7F3D382E1F5A7F04006A6335 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D382D1F5A7F04006A6335 /* HomeViewController.m */; };
 		7F3D38311F5A7F04006A6335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3D382F1F5A7F04006A6335 /* Main.storyboard */; };
@@ -62,8 +62,11 @@
 		7F3D39291F5A7F56006A6335 /* NTYXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */; };
 		7F3D392F1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */; };
 		7F3D39371F5A8BC1006A6335 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39361F5A8BC1006A6335 /* DetailViewController.m */; };
-		7F3D393D1F5A9553006A6335 /* NTYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D393A1F5A9553006A6335 /* NTYPlayer.m */; };
+		7F3D393D1F5A9553006A6335 /* NTYPlayerNotUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */; };
 		7F3D39431F5A96DA006A6335 /* NTYObserverUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */; };
+		7F8858431F5AA4F500611F14 /* NTYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8858421F5AA4F500611F14 /* NTYPlayer.m */; };
+		7F8858451F5ABB8200611F14 /* video.list in Resources */ = {isa = PBXBuildFile; fileRef = 7F8858441F5ABB8200611F14 /* video.list */; };
+		7F8858481F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8858471F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m */; };
 		E579B2B919BD6A8D100E3783 /* libPods-NTYPlayerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12237A7271F77DF9FAD11912 /* libPods-NTYPlayerUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +95,7 @@
 		3764C0C917CC400D4C81841C /* Pods-NTYPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayer/Pods-NTYPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		47783D2F0098DC5C9066DB06 /* Pods-NTYPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerTests/Pods-NTYPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F3D38231F5A7F04006A6335 /* NTYPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTYPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F3D38271F5A7F04006A6335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7F3D38271F5A7F04006A6335 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		7F3D38291F5A7F04006A6335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7F3D382A1F5A7F04006A6335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7F3D382C1F5A7F04006A6335 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -200,11 +203,16 @@
 		7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCNetworkTypeMonitor.m; sourceTree = "<group>"; };
 		7F3D39351F5A8BC1006A6335 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7F3D39361F5A8BC1006A6335 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		7F3D39391F5A9553006A6335 /* NTYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPlayer.h; sourceTree = "<group>"; };
-		7F3D393A1F5A9553006A6335 /* NTYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPlayer.m; sourceTree = "<group>"; };
+		7F3D39391F5A9553006A6335 /* NTYPlayerNotUsed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPlayerNotUsed.h; sourceTree = "<group>"; };
+		7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPlayerNotUsed.m; sourceTree = "<group>"; };
 		7F3D39401F5A968B006A6335 /* SpacemanBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpacemanBlocks.h; path = "../YSDQ/ysdq-ios/Vendor/SpacemanBlocks/SpacemanBlocks.h"; sourceTree = "<group>"; };
 		7F3D39411F5A96DA006A6335 /* NTYObserverUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYObserverUtility.h; sourceTree = "<group>"; };
 		7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYObserverUtility.m; sourceTree = "<group>"; };
+		7F8858411F5AA4F500611F14 /* NTYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPlayer.h; sourceTree = "<group>"; };
+		7F8858421F5AA4F500611F14 /* NTYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPlayer.m; sourceTree = "<group>"; };
+		7F8858441F5ABB8200611F14 /* video.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = video.list; sourceTree = "<group>"; };
+		7F8858461F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NTYMemoryLeakDetector.h"; sourceTree = "<group>"; };
+		7F8858471F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NTYMemoryLeakDetector.m"; sourceTree = "<group>"; };
 		8090597AF1427A6048CC4BB7 /* libPods-NTYPlayerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTYPlayerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91880D0B1B6B5178B38F2E6 /* Pods-NTYPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerTests/Pods-NTYPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3059196F499412191F86E90 /* Pods-NTYPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTYPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTYPlayerUITests/Pods-NTYPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -292,7 +300,8 @@
 			children = (
 				7F3D38371F5A7F04006A6335 /* Info.plist */,
 				7F3D392A1F5A7F80006A6335 /* Prefix.pch */,
-				7F3D38271F5A7F04006A6335 /* main.m */,
+				7F3D38271F5A7F04006A6335 /* main.mm */,
+				7F8858441F5ABB8200611F14 /* video.list */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -436,6 +445,8 @@
 				7F3D388F1F5A7F56006A6335 /* NTYPerformanceProfile.m */,
 				7F3D38901F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.h */,
 				7F3D38911F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.m */,
+				7F8858461F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.h */,
+				7F8858471F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m */,
 			);
 			path = MemoryDetector;
 			sourceTree = "<group>";
@@ -631,10 +642,12 @@
 		7F3D39381F5A9544006A6335 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				7F3D39391F5A9553006A6335 /* NTYPlayer.h */,
-				7F3D393A1F5A9553006A6335 /* NTYPlayer.m */,
+				7F3D39391F5A9553006A6335 /* NTYPlayerNotUsed.h */,
+				7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */,
 				7F3D39411F5A96DA006A6335 /* NTYObserverUtility.h */,
 				7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */,
+				7F8858411F5AA4F500611F14 /* NTYPlayer.h */,
+				7F8858421F5AA4F500611F14 /* NTYPlayer.m */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -779,6 +792,7 @@
 				7F3D38361F5A7F04006A6335 /* LaunchScreen.storyboard in Resources */,
 				7F3D38331F5A7F04006A6335 /* Assets.xcassets in Resources */,
 				7F3D38311F5A7F04006A6335 /* Main.storyboard in Resources */,
+				7F8858451F5ABB8200611F14 /* video.list in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +978,7 @@
 				7F3D38F51F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.m in Sources */,
 				7F3D390F1F5A7F56006A6335 /* NTYKeyValueObserver.m in Sources */,
 				7F3D39151F5A7F56006A6335 /* NTYTableViewHeaderFooterView.m in Sources */,
+				7F8858481F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m in Sources */,
 				7F3D39281F5A7F56006A6335 /* NTYWeakProxy.m in Sources */,
 				7F3D38FF1F5A7F56006A6335 /* JSON.m in Sources */,
 				7F3D38ED1F5A7F56006A6335 /* Dispatch.m in Sources */,
@@ -986,7 +1001,7 @@
 				7F3D39101F5A7F56006A6335 /* NTYCollectionViewCell.m in Sources */,
 				7F3D39161F5A7F56006A6335 /* NTYTableViewProxy.m in Sources */,
 				7F3D38F01F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m in Sources */,
-				7F3D393D1F5A9553006A6335 /* NTYPlayer.m in Sources */,
+				7F3D393D1F5A9553006A6335 /* NTYPlayerNotUsed.m in Sources */,
 				7F3D39371F5A8BC1006A6335 /* DetailViewController.m in Sources */,
 				7F3D38F41F5A7F56006A6335 /* NSObject+Safe.m in Sources */,
 				7F3D38EF1F5A7F56006A6335 /* NSData+NTYExtension.m in Sources */,
@@ -998,7 +1013,8 @@
 				7F3D38FA1F5A7F56006A6335 /* UIImage+RenderingMode.m in Sources */,
 				7F3D39221F5A7F56006A6335 /* Path.m in Sources */,
 				7F3D38F61F5A7F56006A6335 /* NSString+NTYExtension.m in Sources */,
-				7F3D38281F5A7F04006A6335 /* main.m in Sources */,
+				7F8858431F5AA4F500611F14 /* NTYPlayer.m in Sources */,
+				7F3D38281F5A7F04006A6335 /* main.mm in Sources */,
 				7F3D39271F5A7F56006A6335 /* NTYLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
