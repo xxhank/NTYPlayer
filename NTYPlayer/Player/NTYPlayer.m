@@ -12,6 +12,7 @@
 @import MediaPlayer;
 
 #import "NTYTasksExecutor.h"
+#import "NTYObserverUtility.h"
 
 @interface NTYPlayerView : UIView
 @property (nonatomic, weak) AVPlayer *player;
@@ -56,6 +57,7 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
     case NTYPlayerStatePlaying: return @"NTYPlayerStatePlaying";
     case NTYPlayerStatePaused: return @"NTYPlayerStatePaused";
     case NTYPlayerStateFailed: return @"NTYPlayerStateFailed";
+    case NTYPlayerStateFinished: return @"NTYPlayerStateFinished";
     }
 }
 
@@ -81,10 +83,12 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
 @property (nonatomic, strong) AVURLAsset                  *playingAsset;
 @property (nonatomic, strong) AVPlayerItem                *cachingItem;
 
-@property (nonatomic, strong) NSMutableArray<AVURLAsset*> *assets;
-@property (nonatomic, strong) id                           periodicTimeObserver;
+@property (nonatomic, strong) NSMutableArray<AVURLAsset*> *assets; ///< just for cache
+
 #pragma mark - Tasks
-@property (nonatomic, strong) NTYTasksExecutor            *executor;
+@property (nonatomic, strong) NTYTasksExecutor                *executor;
+@property (nonatomic, strong) NSMutableArray<NTYObserverType> *observers;
+@property (nonatomic, strong) id                               periodicTimeObserver;
 
 #pragma mark - Total
 @property (nonatomic, assign) NTYPlayerState state;
@@ -95,9 +99,10 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
 
 #pragma mark - Segment
 /// 当前播放的片段索引
-@property (nonatomic, assign) NSUInteger     segment_currentIndex;
+@property (nonatomic, assign) NSUInteger                 segment_currentIndex;
 /// 当前偏移量在片段中的位置
-@property (nonatomic, assign) NSTimeInterval segment_position;
+@property (nonatomic, assign) NSTimeInterval             segment_position;
+@property (nonatomic, strong) NSMutableArray<NSNumber*> *segment_previousTotalDurations;       ///< 指定片段前面的的总长度, 用于计算当前播放位置
 @end
 
 @implementation NTYPlayer
@@ -108,6 +113,7 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
         _assets    = [NSMutableArray arrayWithCapacity:0x4];
         _tolerance = CMTimeMake(10, 1);
         _render    = [[NTYPlayerView alloc] initWithFrame:RECT(0, 0, 320, 180)];
+        _observers = [NSMutableArray arrayWithCapacity:0x4];
         [self buildVolumeView];
     }
     return self;
@@ -208,10 +214,7 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
                     NSLogError(@"player failed. %@", self.error);
                 }
             } else {
-                self.duration = [[self.durations nty_reduce:@(0) executor:^id (NSNumber *item, NSUInteger index, NSNumber *prev) {
-                    return @(item.doubleValue + prev.doubleValue);
-                }] doubleValue];
-
+                [self processDurations];
                 if (self.durationUpdated) {
                     self.durationUpdated(self.duration);
                 } else {
@@ -227,10 +230,7 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
     } else {
         [Dispatch after:1 execute:^{
             self.durations = durations;
-            self.duration = [[self.durations nty_reduce:@(0) executor:^id (NSNumber *item, NSUInteger index, NSNumber *prev) {
-                return @(item.doubleValue + prev.doubleValue);
-            }] doubleValue];
-
+            [self processDurations];
             if (self.durationUpdated) {
                 self.durationUpdated(self.duration);
             } else {
@@ -244,7 +244,16 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
         }];
     }
 }
-
+- (void)processDurations {
+    self.segment_previousTotalDurations = [NSMutableArray arrayWithCapacity:self.urls.count];
+    NSTimeInterval totalDuration = 0;
+    for (NSNumber *value in self.durations) {
+        NSTimeInterval duration = value.doubleValue;
+        [self.segment_previousTotalDurations addObject:@(totalDuration)];
+        totalDuration += duration;
+    }
+    self.duration = totalDuration;
+}
 - (void)playSegment {
     NSURL        *url     = self.urls[self.segment_currentIndex];
     NSDictionary *options = @{
@@ -299,25 +308,7 @@ NSString*NTYPlayerStateStringify(NTYPlayerState state) {
         [self.player replaceCurrentItemWithPlayerItem:self.playingItem];
     }
 
-
-
-    CMTime interval = CMTimeMakeWithSeconds(1, NSEC_PER_SEC);
-    if (self.periodicTimeObserver) {
-        [self.player removeTimeObserver:self.periodicTimeObserver];
-    }
-    @weakify(self);
-    self.periodicTimeObserver = [self.player addPeriodicTimeObserverForInterval:interval
-                                                                          queue:dispatch_get_main_queue()
-                                                                     usingBlock:^(CMTime time) {
-        @strongify(self);
-        NSTimeInterval seconds = CMTimeGetSeconds(time);
-        self.played = seconds;
-        if (self.playedUpdated) {
-            self.playedUpdated(seconds);
-        } else {
-            NSLogInfo(@"player segment#%@ played  %@",@(self.segment_currentIndex), @(seconds));
-        }
-    }];
+    [self setupObservers];
 
     self.state = NTYPlayerStatePlaying;
     [self.player play];
@@ -423,5 +414,125 @@ NSArray<NSNumber*>*calculateOffset(NSTimeInterval position, NSArray<NSNumber*>*d
 }
 - (CGFloat)volume {
     return self.volumeSlider.value;
+}
+
+#pragma mark -
+- (void)setupObservers {
+    CMTime interval = CMTimeMakeWithSeconds(1, NSEC_PER_SEC);
+    if (self.periodicTimeObserver) {
+        [self.player removeTimeObserver:self.periodicTimeObserver];
+    }
+    @weakify(self);
+    self.periodicTimeObserver = [self.player addPeriodicTimeObserverForInterval:interval
+                                                                          queue:dispatch_get_main_queue()
+                                                                     usingBlock:^(CMTime time) {
+        @strongify(self);
+        NSTimeInterval seconds = CMTimeGetSeconds(time);
+        self.played = seconds + self.segment_previousTotalDurations[self.segment_currentIndex].doubleValue;
+        if (self.playedUpdated) {
+            self.playedUpdated(self.played);
+        } else {
+            NSLogInfo(@"player segment#%@ played  %@",@(self.segment_currentIndex), @(seconds));
+        }
+    }];
+
+    [self.observers removeAllObjects];
+
+    NTYNotificationObserver *gd1 = [[NTYNotificationObserver alloc] initWithName:AVPlayerItemDidPlayToEndTimeNotification source:self.playingItem action:^(NSNotification *notification) {
+        @strongify(self);if (!self) {return;}
+        self.state = NTYPlayerStateFinished;
+        if (self.segment_currentIndex < self.urls.count - 1) {
+            self.segment_currentIndex += 1;
+            self.segment_position = 0;
+            [self playSegment];
+        } else {
+            /// 最后一段播放结束
+            if (self.stateUpdated) {
+                self.stateUpdated(self.state);
+            } else {
+                NSLogInfo(@"player play finished");
+            }
+        }
+    }];
+    [self.observers addObject:gd1];
+
+    NTYNotificationObserver *gd2 = [[NTYNotificationObserver alloc] initWithName:AVPlayerItemFailedToPlayToEndTimeNotification source:self.playingItem action:^(NSNotification *notification) {
+        @strongify(self);if (!self) {return;}
+        // [self _dealErrorWithMsg:@"Failed To Play To End"];
+        self.state = NTYPlayerStateFailed;
+        self.error = self.playingItem.error;
+        NSLogError(@"player segment#%zd play failed %@ %@", self.segment_currentIndex, self.player.error, self.playingItem.error);
+
+        if (self.stateUpdated) {
+            self.stateUpdated(self.state);
+        } else {
+        }
+    }];
+    [self.observers addObject:gd2];
+
+   #if 0 /// 播放器不应该关心是否切入到后台
+    // https://developer.apple.com/library/ios/qa/qa1668/_index.html
+    NTYNotificationObserver *gd3 = [[NTYNotificationObserver alloc] initWithName:UIApplicationDidEnterBackgroundNotification source:nil action:^(NSNotification *notification) {
+        @strongify(self);if (!self) {return;}
+        if (!self.bIsPlayable) {
+            return;
+        }
+        self.view.player = nil;
+    }];
+    [self.observers addObject:gd3];
+
+    NTYNotificationObserver *gd4 = [[NTYNotificationObserver alloc] initWithName:UIApplicationDidBecomeActiveNotification source:nil action:^(NSNotification *notification) {
+        @strongify(self);if (!self) {return;}
+        if (!self.bIsPlayable) {
+            return;
+        }
+        self.view.player = self.player;
+    }];
+    [self.observers addObject:gd4];
+   #endif // if 0
+
+    NTYSingleKeyValueObserver *d1 = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"playbackBufferEmpty" target:self.playingItem action:^(id newValue, id oldValue) {
+        @strongify(self);if (!self) {return;}
+        if ([newValue boolValue]) {
+            self.bufferState = NTYPlayerBufferStateBuffering;
+            if (self.bufferStateUpdated) {
+                self.bufferStateUpdated(self.bufferState);
+            } else {
+                NSLogInfo(@"player start buffer");
+            }
+        }
+    }];
+    [self.observers addObject:d1];
+
+    NTYSingleKeyValueObserver *d2 = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"playbackLikelyToKeepUp" target:self.playingItem action:^(id newValue, id oldValue) {
+        @strongify(self);if (!self) {return;}
+        if ([newValue boolValue]) {
+            self.bufferState = NTYPlayerBufferStateFinished;
+            if (self.bufferStateUpdated) {
+                self.bufferStateUpdated(self.bufferState);
+            } else {
+                NSLogInfo(@"player end buffer");
+            }
+            self.bufferState = NTYPlayerBufferStateWaiting;
+        }
+    }];
+    [self.observers addObject:d2];
+
+    NTYSingleKeyValueObserver *d3 = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"loadedTimeRanges" target:self.playingItem action:^(id newValue, id oldValue) {
+        @strongify(self);if (!self) {return;}
+        CMTimeRange timeRange = [[newValue lastObject] CMTimeRangeValue];
+        if (CMTIME_IS_INDEFINITE(timeRange.start) || CMTIME_IS_INDEFINITE(timeRange.duration)) {
+            return;
+        }
+        double startSeconds = CMTimeGetSeconds(timeRange.start);
+        double durationSeconds = CMTimeGetSeconds(timeRange.duration);
+        double result = startSeconds + durationSeconds;
+        if (isnan(result)) {
+            return;
+        }
+        // 更新timeBuffered
+        self.timeBuffered = result;
+    }];
+    [self.observers addObject:d3];
 }
 @end

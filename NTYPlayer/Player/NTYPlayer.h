@@ -15,8 +15,16 @@ typedef NS_ENUM (NSUInteger, NTYPlayerState) {
     NTYPlayerStatePreparing,///< 获取时长
     NTYPlayerStatePlaying,
     NTYPlayerStatePaused,
-    NTYPlayerStateFailed
+    NTYPlayerStateFailed,
+    NTYPlayerStateFinished
 };
+
+typedef NS_ENUM (NSUInteger, NTYPlayerBufferState) {
+    NTYPlayerBufferStateWaiting,
+    NTYPlayerBufferStateBuffering,
+    NTYPlayerBufferStateFinished
+};
+
 NSString*NTYPlayerStateStringify(NTYPlayerState state);
 
 
@@ -26,12 +34,18 @@ typedef NS_ENUM (NSUInteger, NTYPlayerError) {
 
 typedef void (^NTYPlayerDurationUpdated)(NSTimeInterval totalDuration);
 typedef void (^NTYPlayerStateUpdated)(NTYPlayerState state);
+typedef void (^NTYPlayerBufferStateUpdated)(NTYPlayerBufferState state);
+
+typedef void (^NTYPlayerPlayedUpdated)(NSTimeInterval played);
 typedef void (^NTYPlayerPlayedUpdated)(NSTimeInterval played);
 
 @interface NTYPlayer : NSObject
 
 @property (nonatomic, assign, readonly) NTYPlayerState state;
+@property (nonatomic, assign,  ) NTYPlayerBufferState  bufferState;
+
 @property (nonatomic, assign, readonly) NSTimeInterval played;
+@property (nonatomic, assign) NSTimeInterval           timeBuffered;
 @property (nonatomic, assign, readonly) NSTimeInterval duration;
 
 @property (nonatomic, readonly) UIView                *contentView;
@@ -56,9 +70,11 @@ typedef void (^NTYPlayerPlayedUpdated)(NSTimeInterval played);
 - (void)resume;
 - (void)seek:(NSTimeInterval)position;
 
-@property (nonatomic, copy) NTYPlayerDurationUpdated durationUpdated;
-@property (nonatomic, copy) NTYPlayerStateUpdated    stateUpdated;
-@property (nonatomic, copy) NTYPlayerPlayedUpdated   playedUpdated;
+@property (nonatomic, copy) NTYPlayerDurationUpdated    durationUpdated;
+@property (nonatomic, copy) NTYPlayerStateUpdated       stateUpdated;
+@property (nonatomic, copy) NTYPlayerBufferStateUpdated bufferStateUpdated;
+
+@property (nonatomic, copy) NTYPlayerPlayedUpdated      playedUpdated;
 @end
 
 NS_ASSUME_NONNULL_END
