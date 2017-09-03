@@ -11,6 +11,7 @@
 #import "NTYPlayer.h"
 #import "NSString+NTYExtension.h"
 #import "Path.h"
+#import "NTYTimeConvert.h"
 
 @interface DetailContentCellViewModel : NSObject<NTYTableViewCellViewModel>
 @property (nonatomic, strong) NSString *title;
@@ -142,7 +143,7 @@
     self.player.durationUpdated = ^(NSTimeInterval totalDuration) {
         @strongify(self);
         [Dispatch ui:^{
-            self.totalDurationLabel.text = NSStringFromDuration(totalDuration);
+            self.totalDurationLabel.text = [NTYTimeConvert HHMMSSTextFromSeconds:(totalDuration)];
             self.processView.minimumValue = 0;
             self.processView.maximumValue = totalDuration;
         }];
@@ -152,7 +153,7 @@
         @strongify(self);
         [Dispatch ui:^{
             self.processView.value = played;
-            self.playedTimeLabel.text = NSStringFromDuration(played);
+            self.playedTimeLabel.text = [NTYTimeConvert HHMMSSTextFromSeconds:(played)];
         }];
     };
 }
@@ -190,20 +191,7 @@
 }
 
 #pragma mark - Help
-NSString*NSStringFromDuration(NSTimeInterval totalDuration) {
-    const NSUInteger SecondsPerHour   = 60 * 60;
-    const NSUInteger SecondsPerMinute = 60;
 
-    NSUInteger       hour    = totalDuration / SecondsPerHour;
-    NSUInteger       left    = totalDuration - hour * SecondsPerHour;
-    NSUInteger       minutes = left / SecondsPerMinute;
-    NSUInteger       seconds = left - minutes * SecondsPerMinute;
-    if (hour > 0) {
-        return STRING(@"%02zd:%02zd:%02zd", hour, minutes, seconds);
-    } else {
-        return STRING(@"%02zd:%02zd", minutes, seconds);
-    }
-};
 
 #pragma mark - Feature 1
 #pragma mark - Override
