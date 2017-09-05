@@ -39,7 +39,7 @@
 #import "NSArray+NTYExtension.h"
 #import "NSDictionary+NTYExtension.h"
 #import "NSDateFormatter+NTYExtension.h"
-
+#import "NSURL+NTYExtension.h"
 // #import "UIImage+Color.h"
 //#import "UIImageView+URL.h"
 //#import "NSString+Omit.h"
@@ -47,4 +47,7 @@
 //#import "UIColor+Addition.h"
 //#import "UIView+Autolayout.h"
 //#import "UIImageView+NTYWebCache.h"
+#define AFNetWorking_test_p12 NO
+#define kBaseUrl @"https://www.baidu.com"
+#define CityInfo @"CN_20_18_1"
 #endif

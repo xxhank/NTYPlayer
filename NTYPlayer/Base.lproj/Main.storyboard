@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sv8-Xd-0KV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sv8-Xd-0KV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,6 +28,14 @@
                                 <state key="normal" title="Open Detail"/>
                                 <connections>
                                     <segue destination="sPi-d9-iSC" kind="show" id="od5-nT-1io"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm3-3o-amo">
+                                <rect key="frame" x="162" y="417" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TestNewJs"/>
+                                <connections>
+                                    <segue destination="9dN-mG-ekw" kind="show" id="wgP-gQ-oIf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,11 +144,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeL-qX-J7F" id="UnC-KC-edp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hdX-04-hdC">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="83"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="83.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -189,6 +197,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuX-Ow-ot8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1637" y="-548"/>
+        </scene>
+        <!--NewJS View Controller-->
+        <scene sceneID="Cmk-8m-8mS">
+            <objects>
+                <viewController id="9dN-mG-ekw" customClass="NewJSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EFh-mE-HK7"/>
+                        <viewControllerLayoutGuide type="bottom" id="SXd-Ov-ozZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a1E-8e-om3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07q-qb-nO6">
+                                <rect key="frame" x="136" y="280" width="103" height="30"/>
+                                <state key="normal" title="CallJSFunction"/>
+                                <connections>
+                                    <action selector="testUseJS:" destination="9dN-mG-ekw" eventType="touchUpInside" id="FoC-ys-oCf"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-jV-ncc">
+                                <rect key="frame" x="8" y="72" width="359" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="3Yw-2v-uMq"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="07q-qb-nO6" firstAttribute="centerX" secondItem="a1E-8e-om3" secondAttribute="centerX" id="1Wg-fG-O7Z"/>
+                            <constraint firstAttribute="trailing" secondItem="c8b-jV-ncc" secondAttribute="trailing" constant="8" id="64Y-s0-U23"/>
+                            <constraint firstItem="c8b-jV-ncc" firstAttribute="leading" secondItem="a1E-8e-om3" secondAttribute="leading" constant="8" id="VIS-HE-0rf"/>
+                            <constraint firstItem="07q-qb-nO6" firstAttribute="top" secondItem="c8b-jV-ncc" secondAttribute="bottom" constant="8" id="gja-J9-Ino"/>
+                            <constraint firstItem="c8b-jV-ncc" firstAttribute="top" secondItem="EFh-mE-HK7" secondAttribute="bottom" constant="8" id="gt2-c0-1gY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outputView" destination="c8b-jV-ncc" id="BnA-UM-0Jg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXh-cD-AwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="217.24137931034485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sox-b9-ZlT">

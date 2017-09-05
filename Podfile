@@ -15,6 +15,10 @@ target 'NTYPlayer' do
   pod 'KeychainItemWrapper-Copy'
   pod 'Masonry'
 
+  pod 'AFNetworking'
+  pod 'JSONModel'
+  
+  pod 'NSString-Hashes'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'YYDispatchQueuePool'
   pod "JRSwizzle", :git=>"https://github.com/rentzsch/jrswizzle.git", :branch=>"semver-1.x"

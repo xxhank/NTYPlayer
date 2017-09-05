@@ -65,10 +65,24 @@
 		7F3D39271F5A7F56006A6335 /* NTYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38E61F5A7F56006A6335 /* NTYLabel.m */; };
 		7F3D39281F5A7F56006A6335 /* NTYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38E91F5A7F56006A6335 /* NTYWeakProxy.m */; };
 		7F3D39291F5A7F56006A6335 /* NTYXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */; };
-		7F3D392F1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */; };
 		7F3D39371F5A8BC1006A6335 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39361F5A8BC1006A6335 /* DetailViewController.m */; };
 		7F3D393D1F5A9553006A6335 /* NTYPlayerNotUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */; };
 		7F3D39431F5A96DA006A6335 /* NTYObserverUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */; };
+		7F4E4DBE1F5E8A8600EAED30 /* NSURL+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DBD1F5E8A8600EAED30 /* NSURL+NTYExtension.m */; };
+		7F4E4DC41F5E8AC800EAED30 /* MSCNetworkTypeMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DC11F5E8AC800EAED30 /* MSCNetworkTypeMonitor.m */; };
+		7F4E4DCB1F5E8C5600EAED30 /* NewJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DCA1F5E8C5600EAED30 /* NewJSViewController.m */; };
+		7F4E4DCD1F5E9C7500EAED30 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 7F4E4DCC1F5E9C7500EAED30 /* test.js */; };
+		7F4E4DE11F5EA1C100EAED30 /* DQJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DD01F5EA1C100EAED30 /* DQJSONModel.m */; };
+		7F4E4DE21F5EA1C100EAED30 /* DQNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DD21F5EA1C100EAED30 /* DQNetworking.m */; };
+		7F4E4DE31F5EA1C100EAED30 /* DQRequest+AutoCancel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DD41F5EA1C100EAED30 /* DQRequest+AutoCancel.m */; };
+		7F4E4DE41F5EA1C100EAED30 /* DQRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DD61F5EA1C100EAED30 /* DQRequest.m */; };
+		7F4E4DE51F5EA1C100EAED30 /* DQRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DD81F5EA1C100EAED30 /* DQRequests.m */; };
+		7F4E4DE61F5EA1C100EAED30 /* DQResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DDA1F5EA1C100EAED30 /* DQResponse.m */; };
+		7F4E4DE71F5EA1C100EAED30 /* DQResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DDC1F5EA1C100EAED30 /* DQResponseMapper.m */; };
+		7F4E4DE81F5EA1C100EAED30 /* DQSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DDE1F5EA1C100EAED30 /* DQSessionManager.m */; };
+		7F4E4DE91F5EA1C100EAED30 /* DQSessionTaskGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DE01F5EA1C100EAED30 /* DQSessionTaskGroup.m */; };
+		7F4E4DEE1F5EA77D00EAED30 /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DEB1F5EA77D00EAED30 /* AppConfig.m */; };
+		7F4E4DEF1F5EA77D00EAED30 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DED1F5EA77D00EAED30 /* AppSettings.m */; };
 		7F8858431F5AA4F500611F14 /* NTYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8858421F5AA4F500611F14 /* NTYPlayer.m */; };
 		7F8858451F5ABB8200611F14 /* video.list in Resources */ = {isa = PBXBuildFile; fileRef = 7F8858441F5ABB8200611F14 /* video.list */; };
 		7F8858481F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8858471F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m */; };
@@ -213,15 +227,42 @@
 		7F3D38EB1F5A7F56006A6335 /* NTYXibView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYXibView.h; sourceTree = "<group>"; };
 		7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYXibView.m; sourceTree = "<group>"; };
 		7F3D392A1F5A7F80006A6335 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ../Prefix.pch; sourceTree = "<group>"; };
-		7F3D392D1F5A86B6006A6335 /* MSCNetworkTypeMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCNetworkTypeMonitor.h; sourceTree = "<group>"; };
-		7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCNetworkTypeMonitor.m; sourceTree = "<group>"; };
 		7F3D39351F5A8BC1006A6335 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7F3D39361F5A8BC1006A6335 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7F3D39391F5A9553006A6335 /* NTYPlayerNotUsed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPlayerNotUsed.h; sourceTree = "<group>"; };
 		7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPlayerNotUsed.m; sourceTree = "<group>"; };
-		7F3D39401F5A968B006A6335 /* SpacemanBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SpacemanBlocks.h; path = "../YSDQ/ysdq-ios/Vendor/SpacemanBlocks/SpacemanBlocks.h"; sourceTree = "<group>"; };
 		7F3D39411F5A96DA006A6335 /* NTYObserverUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYObserverUtility.h; sourceTree = "<group>"; };
 		7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYObserverUtility.m; sourceTree = "<group>"; };
+		7F4E4DBC1F5E8A8600EAED30 /* NSURL+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NTYExtension.h"; sourceTree = "<group>"; };
+		7F4E4DBD1F5E8A8600EAED30 /* NSURL+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NTYExtension.m"; sourceTree = "<group>"; };
+		7F4E4DC01F5E8AC800EAED30 /* MSCNetworkTypeMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCNetworkTypeMonitor.h; sourceTree = "<group>"; };
+		7F4E4DC11F5E8AC800EAED30 /* MSCNetworkTypeMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCNetworkTypeMonitor.m; sourceTree = "<group>"; };
+		7F4E4DC31F5E8AC800EAED30 /* SpacemanBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpacemanBlocks.h; sourceTree = "<group>"; };
+		7F4E4DC91F5E8C5600EAED30 /* NewJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewJSViewController.h; sourceTree = "<group>"; };
+		7F4E4DCA1F5E8C5600EAED30 /* NewJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewJSViewController.m; sourceTree = "<group>"; };
+		7F4E4DCC1F5E9C7500EAED30 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
+		7F4E4DCF1F5EA1C100EAED30 /* DQJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQJSONModel.h; sourceTree = "<group>"; };
+		7F4E4DD01F5EA1C100EAED30 /* DQJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQJSONModel.m; sourceTree = "<group>"; };
+		7F4E4DD11F5EA1C100EAED30 /* DQNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNetworking.h; sourceTree = "<group>"; };
+		7F4E4DD21F5EA1C100EAED30 /* DQNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNetworking.m; sourceTree = "<group>"; };
+		7F4E4DD31F5EA1C100EAED30 /* DQRequest+AutoCancel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DQRequest+AutoCancel.h"; sourceTree = "<group>"; };
+		7F4E4DD41F5EA1C100EAED30 /* DQRequest+AutoCancel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DQRequest+AutoCancel.m"; sourceTree = "<group>"; };
+		7F4E4DD51F5EA1C100EAED30 /* DQRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQRequest.h; sourceTree = "<group>"; };
+		7F4E4DD61F5EA1C100EAED30 /* DQRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQRequest.m; sourceTree = "<group>"; };
+		7F4E4DD71F5EA1C100EAED30 /* DQRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQRequests.h; sourceTree = "<group>"; };
+		7F4E4DD81F5EA1C100EAED30 /* DQRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQRequests.m; sourceTree = "<group>"; };
+		7F4E4DD91F5EA1C100EAED30 /* DQResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQResponse.h; sourceTree = "<group>"; };
+		7F4E4DDA1F5EA1C100EAED30 /* DQResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQResponse.m; sourceTree = "<group>"; };
+		7F4E4DDB1F5EA1C100EAED30 /* DQResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQResponseMapper.h; sourceTree = "<group>"; };
+		7F4E4DDC1F5EA1C100EAED30 /* DQResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQResponseMapper.m; sourceTree = "<group>"; };
+		7F4E4DDD1F5EA1C100EAED30 /* DQSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQSessionManager.h; sourceTree = "<group>"; };
+		7F4E4DDE1F5EA1C100EAED30 /* DQSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQSessionManager.m; sourceTree = "<group>"; };
+		7F4E4DDF1F5EA1C100EAED30 /* DQSessionTaskGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQSessionTaskGroup.h; sourceTree = "<group>"; };
+		7F4E4DE01F5EA1C100EAED30 /* DQSessionTaskGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQSessionTaskGroup.m; sourceTree = "<group>"; };
+		7F4E4DEA1F5EA77D00EAED30 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		7F4E4DEB1F5EA77D00EAED30 /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
+		7F4E4DEC1F5EA77D00EAED30 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
+		7F4E4DED1F5EA77D00EAED30 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
 		7F8858411F5AA4F500611F14 /* NTYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTYPlayer.h; path = ../../Player/NTYPlayer.h; sourceTree = "<group>"; };
 		7F8858421F5AA4F500611F14 /* NTYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTYPlayer.m; path = ../../Player/NTYPlayer.m; sourceTree = "<group>"; };
 		7F8858441F5ABB8200611F14 /* video.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = video.list; sourceTree = "<group>"; };
@@ -383,6 +424,7 @@
 		7F3D38591F5A7F56006A6335 /* Ninty */ = {
 			isa = PBXGroup;
 			children = (
+				7F4E4DCE1F5EA1C100EAED30 /* Networking */,
 				7F3D385A1F5A7F56006A6335 /* Dispatch */,
 				7F3D385D1F5A7F56006A6335 /* Extension */,
 				7F3D38801F5A7F56006A6335 /* JSON */,
@@ -404,7 +446,7 @@
 				7F3D38EA1F5A7F56006A6335 /* XibView */,
 			);
 			name = Ninty;
-			path = "../YSDQ/ysdq-ios/Le123PhoneClient/Ninty";
+			path = ../YSDQ/Le123PhoneClient/Ninty;
 			sourceTree = "<group>";
 		};
 		7F3D385A1F5A7F56006A6335 /* Dispatch */ = {
@@ -419,6 +461,8 @@
 		7F3D385D1F5A7F56006A6335 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7F4E4DBC1F5E8A8600EAED30 /* NSURL+NTYExtension.h */,
+				7F4E4DBD1F5E8A8600EAED30 /* NSURL+NTYExtension.m */,
 				7F3D385E1F5A7F56006A6335 /* NSArray+NTYExtension.h */,
 				7F3D385F1F5A7F56006A6335 /* NSArray+NTYExtension.m */,
 				7F3D38601F5A7F56006A6335 /* NSData+NTYExtension.h */,
@@ -633,20 +677,11 @@
 		7F3D392B1F5A86AF006A6335 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				7F3D393F1F5A9595006A6335 /* SpacemanBlocks */,
-				7F3D392C1F5A86B6006A6335 /* NetworkStatus */,
+				7F4E4DBF1F5E8AC800EAED30 /* NetworkStatus */,
+				7F4E4DC21F5E8AC800EAED30 /* SpacemanBlocks */,
 			);
 			name = Vendor;
-			sourceTree = "<group>";
-		};
-		7F3D392C1F5A86B6006A6335 /* NetworkStatus */ = {
-			isa = PBXGroup;
-			children = (
-				7F3D392D1F5A86B6006A6335 /* MSCNetworkTypeMonitor.h */,
-				7F3D392E1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m */,
-			);
-			name = NetworkStatus;
-			path = "../YSDQ/ysdq-ios/Vendor/NetworkStatus";
+			path = ../YSDQ/Vendor;
 			sourceTree = "<group>";
 		};
 		7F3D39301F5A8B0D006A6335 /* UI */ = {
@@ -662,6 +697,10 @@
 		7F3D39311F5A8B1B006A6335 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				7F4E4DEA1F5EA77D00EAED30 /* AppConfig.h */,
+				7F4E4DEB1F5EA77D00EAED30 /* AppConfig.m */,
+				7F4E4DEC1F5EA77D00EAED30 /* AppSettings.h */,
+				7F4E4DED1F5EA77D00EAED30 /* AppSettings.m */,
 				7F3D38291F5A7F04006A6335 /* AppDelegate.h */,
 				7F3D382A1F5A7F04006A6335 /* AppDelegate.m */,
 			);
@@ -680,6 +719,7 @@
 		7F3D39331F5A8B30006A6335 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7F4E4DC81F5E8C5600EAED30 /* NewJS */,
 				7F3D39341F5A8B9C006A6335 /* Detail */,
 				7F3D39321F5A8B27006A6335 /* Home */,
 			);
@@ -707,12 +747,56 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
-		7F3D393F1F5A9595006A6335 /* SpacemanBlocks */ = {
+		7F4E4DBF1F5E8AC800EAED30 /* NetworkStatus */ = {
 			isa = PBXGroup;
 			children = (
-				7F3D39401F5A968B006A6335 /* SpacemanBlocks.h */,
+				7F4E4DC01F5E8AC800EAED30 /* MSCNetworkTypeMonitor.h */,
+				7F4E4DC11F5E8AC800EAED30 /* MSCNetworkTypeMonitor.m */,
 			);
-			name = SpacemanBlocks;
+			path = NetworkStatus;
+			sourceTree = "<group>";
+		};
+		7F4E4DC21F5E8AC800EAED30 /* SpacemanBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				7F4E4DC31F5E8AC800EAED30 /* SpacemanBlocks.h */,
+			);
+			path = SpacemanBlocks;
+			sourceTree = "<group>";
+		};
+		7F4E4DC81F5E8C5600EAED30 /* NewJS */ = {
+			isa = PBXGroup;
+			children = (
+				7F4E4DC91F5E8C5600EAED30 /* NewJSViewController.h */,
+				7F4E4DCA1F5E8C5600EAED30 /* NewJSViewController.m */,
+				7F4E4DCC1F5E9C7500EAED30 /* test.js */,
+			);
+			path = NewJS;
+			sourceTree = "<group>";
+		};
+		7F4E4DCE1F5EA1C100EAED30 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7F4E4DCF1F5EA1C100EAED30 /* DQJSONModel.h */,
+				7F4E4DD01F5EA1C100EAED30 /* DQJSONModel.m */,
+				7F4E4DD11F5EA1C100EAED30 /* DQNetworking.h */,
+				7F4E4DD21F5EA1C100EAED30 /* DQNetworking.m */,
+				7F4E4DD31F5EA1C100EAED30 /* DQRequest+AutoCancel.h */,
+				7F4E4DD41F5EA1C100EAED30 /* DQRequest+AutoCancel.m */,
+				7F4E4DD51F5EA1C100EAED30 /* DQRequest.h */,
+				7F4E4DD61F5EA1C100EAED30 /* DQRequest.m */,
+				7F4E4DD71F5EA1C100EAED30 /* DQRequests.h */,
+				7F4E4DD81F5EA1C100EAED30 /* DQRequests.m */,
+				7F4E4DD91F5EA1C100EAED30 /* DQResponse.h */,
+				7F4E4DDA1F5EA1C100EAED30 /* DQResponse.m */,
+				7F4E4DDB1F5EA1C100EAED30 /* DQResponseMapper.h */,
+				7F4E4DDC1F5EA1C100EAED30 /* DQResponseMapper.m */,
+				7F4E4DDD1F5EA1C100EAED30 /* DQSessionManager.h */,
+				7F4E4DDE1F5EA1C100EAED30 /* DQSessionManager.m */,
+				7F4E4DDF1F5EA1C100EAED30 /* DQSessionTaskGroup.h */,
+				7F4E4DE01F5EA1C100EAED30 /* DQSessionTaskGroup.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		9438A7343FADACF4C5F3CAC1 /* Frameworks */ = {
@@ -844,6 +928,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4E4DCD1F5E9C7500EAED30 /* test.js in Resources */,
 				7F1E121B1F5C36A900B421D1 /* player.xcassets in Resources */,
 				7F3D38361F5A7F04006A6335 /* LaunchScreen.storyboard in Resources */,
 				7F3D38331F5A7F04006A6335 /* Assets.xcassets in Resources */,
@@ -1023,7 +1108,6 @@
 				7F3D39431F5A96DA006A6335 /* NTYObserverUtility.m in Sources */,
 				7F3D38F31F5A7F56006A6335 /* NSObject+Decroate.m in Sources */,
 				7F3D39231F5A7F56006A6335 /* NTYResult.m in Sources */,
-				7F3D392F1F5A86B6006A6335 /* MSCNetworkTypeMonitor.m in Sources */,
 				7F3D39131F5A7F56006A6335 /* NTYSupportViewModelImpl.m in Sources */,
 				7F3D38FD1F5A7F56006A6335 /* UITableViewCell+NTYExtension.m in Sources */,
 				7F3D38F11F5A7F56006A6335 /* NSDictionary+NTYExtension.m in Sources */,
@@ -1032,9 +1116,11 @@
 				7F1E12241F5C38E500B421D1 /* NTYProgressPopover.m in Sources */,
 				7F3D38F91F5A7F56006A6335 /* UIDevice+NTYExtension.m in Sources */,
 				7F3D382E1F5A7F04006A6335 /* HomeViewController.m in Sources */,
+				7F4E4DE61F5EA1C100EAED30 /* DQResponse.m in Sources */,
 				7F3D38F51F5A7F56006A6335 /* NSObject+Safe_UndefinedKey.m in Sources */,
 				7F3D390F1F5A7F56006A6335 /* NTYKeyValueObserver.m in Sources */,
 				7F3D39151F5A7F56006A6335 /* NTYTableViewHeaderFooterView.m in Sources */,
+				7F4E4DCB1F5E8C5600EAED30 /* NewJSViewController.m in Sources */,
 				7F8858481F5AF86000611F14 /* UIViewController+NTYMemoryLeakDetector.m in Sources */,
 				7F3D39281F5A7F56006A6335 /* NTYWeakProxy.m in Sources */,
 				7F3D38FF1F5A7F56006A6335 /* JSON.m in Sources */,
@@ -1046,14 +1132,19 @@
 				7F3D39211F5A7F56006A6335 /* NTYPagingViewControllerProtocol.m in Sources */,
 				7F3D38FB1F5A7F56006A6335 /* UINavigationItem+iOS7Spacing.m in Sources */,
 				7F1E12311F5C485E00B421D1 /* NTYPlayerActionView.m in Sources */,
+				7F4E4DE71F5EA1C100EAED30 /* DQResponseMapper.m in Sources */,
 				7F3D39261F5A7F56006A6335 /* NTYTimer.m in Sources */,
+				7F4E4DE31F5EA1C100EAED30 /* DQRequest+AutoCancel.m in Sources */,
 				7F3D39291F5A7F56006A6335 /* NTYXibView.m in Sources */,
+				7F4E4DE11F5EA1C100EAED30 /* DQJSONModel.m in Sources */,
 				7F3D39021F5A7F56006A6335 /* DQMemoryDetector.m in Sources */,
 				7F1E12211F5C38C100B421D1 /* NTYProgressControl.m in Sources */,
 				7F3D382B1F5A7F04006A6335 /* AppDelegate.m in Sources */,
+				7F4E4DEF1F5EA77D00EAED30 /* AppSettings.m in Sources */,
 				7F3D39031F5A7F56006A6335 /* NTYPerformanceProfile.m in Sources */,
 				7F3D39241F5A7F56006A6335 /* NTYRouter.m in Sources */,
 				7F3D39251F5A7F56006A6335 /* NTYTableView.m in Sources */,
+				7F4E4DE41F5EA1C100EAED30 /* DQRequest.m in Sources */,
 				7F3D39041F5A7F56006A6335 /* UIAlertController+NTY_MemoryLeakDetect.m in Sources */,
 				7F3D38FE1F5A7F56006A6335 /* UIView+SARRS.m in Sources */,
 				7F3D39051F5A7F56006A6335 /* NTYTasksExecutor.m in Sources */,
@@ -1061,19 +1152,26 @@
 				7F3D39161F5A7F56006A6335 /* NTYTableViewProxy.m in Sources */,
 				7F3D38F01F5A7F56006A6335 /* NSDateFormatter+NTYExtension.m in Sources */,
 				7F3D393D1F5A9553006A6335 /* NTYPlayerNotUsed.m in Sources */,
+				7F4E4DC41F5E8AC800EAED30 /* MSCNetworkTypeMonitor.m in Sources */,
+				7F4E4DE81F5EA1C100EAED30 /* DQSessionManager.m in Sources */,
 				7F3D39371F5A8BC1006A6335 /* DetailViewController.m in Sources */,
 				7F3D38F41F5A7F56006A6335 /* NSObject+Safe.m in Sources */,
 				7F3D38EF1F5A7F56006A6335 /* NSData+NTYExtension.m in Sources */,
 				7F3D38F71F5A7F56006A6335 /* NSString+NTYURLUtility.m in Sources */,
 				7F3D39111F5A7F56006A6335 /* NTYCollectionViewProxy.m in Sources */,
+				7F4E4DE91F5EA1C100EAED30 /* DQSessionTaskGroup.m in Sources */,
 				7F3D38F21F5A7F56006A6335 /* NSObject+Cast.m in Sources */,
+				7F4E4DBE1F5E8A8600EAED30 /* NSURL+NTYExtension.m in Sources */,
 				7F3D39011F5A7F56006A6335 /* Logger.m in Sources */,
 				7F3D38FC1F5A7F56006A6335 /* UINib+NTYExtension.m in Sources */,
+				7F4E4DE51F5EA1C100EAED30 /* DQRequests.m in Sources */,
 				7F1E122E1F5C3C0700B421D1 /* NTYTimeConvert.m in Sources */,
 				7F3D38FA1F5A7F56006A6335 /* UIImage+RenderingMode.m in Sources */,
+				7F4E4DE21F5EA1C100EAED30 /* DQNetworking.m in Sources */,
 				7F3D39221F5A7F56006A6335 /* Path.m in Sources */,
 				7F3D38F61F5A7F56006A6335 /* NSString+NTYExtension.m in Sources */,
 				7F8858431F5AA4F500611F14 /* NTYPlayer.m in Sources */,
+				7F4E4DEE1F5EA77D00EAED30 /* AppConfig.m in Sources */,
 				7F3D38281F5A7F04006A6335 /* main.mm in Sources */,
 				7F3D39271F5A7F56006A6335 /* NTYLabel.m in Sources */,
 			);
