@@ -67,7 +67,6 @@
 		7F3D39291F5A7F56006A6335 /* NTYXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D38EC1F5A7F56006A6335 /* NTYXibView.m */; };
 		7F3D39371F5A8BC1006A6335 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39361F5A8BC1006A6335 /* DetailViewController.m */; };
 		7F3D393D1F5A9553006A6335 /* NTYPlayerNotUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */; };
-		7F3D39431F5A96DA006A6335 /* NTYObserverUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */; };
 		7F4E4DBE1F5E8A8600EAED30 /* NSURL+NTYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DBD1F5E8A8600EAED30 /* NSURL+NTYExtension.m */; };
 		7F4E4DC41F5E8AC800EAED30 /* MSCNetworkTypeMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DC11F5E8AC800EAED30 /* MSCNetworkTypeMonitor.m */; };
 		7F4E4DCB1F5E8C5600EAED30 /* NewJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E4DCA1F5E8C5600EAED30 /* NewJSViewController.m */; };
@@ -231,8 +230,6 @@
 		7F3D39361F5A8BC1006A6335 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7F3D39391F5A9553006A6335 /* NTYPlayerNotUsed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYPlayerNotUsed.h; sourceTree = "<group>"; };
 		7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYPlayerNotUsed.m; sourceTree = "<group>"; };
-		7F3D39411F5A96DA006A6335 /* NTYObserverUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTYObserverUtility.h; sourceTree = "<group>"; };
-		7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTYObserverUtility.m; sourceTree = "<group>"; };
 		7F4E4DBC1F5E8A8600EAED30 /* NSURL+NTYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NTYExtension.h"; sourceTree = "<group>"; };
 		7F4E4DBD1F5E8A8600EAED30 /* NSURL+NTYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NTYExtension.m"; sourceTree = "<group>"; };
 		7F4E4DC01F5E8AC800EAED30 /* MSCNetworkTypeMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCNetworkTypeMonitor.h; sourceTree = "<group>"; };
@@ -740,8 +737,6 @@
 			children = (
 				7F3D39391F5A9553006A6335 /* NTYPlayerNotUsed.h */,
 				7F3D393A1F5A9553006A6335 /* NTYPlayerNotUsed.m */,
-				7F3D39411F5A96DA006A6335 /* NTYObserverUtility.h */,
-				7F3D39421F5A96DA006A6335 /* NTYObserverUtility.m */,
 				7F1E121A1F5C36A900B421D1 /* player.xcassets */,
 			);
 			path = Player;
@@ -1105,7 +1100,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F3D39431F5A96DA006A6335 /* NTYObserverUtility.m in Sources */,
 				7F3D38F31F5A7F56006A6335 /* NSObject+Decroate.m in Sources */,
 				7F3D39231F5A7F56006A6335 /* NTYResult.m in Sources */,
 				7F3D39131F5A7F56006A6335 /* NTYSupportViewModelImpl.m in Sources */,

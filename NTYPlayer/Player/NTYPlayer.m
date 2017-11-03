@@ -10,9 +10,8 @@
 @import UIKit;
 @import AVFoundation;
 @import MediaPlayer;
-
 #import "NTYTasksExecutor.h"
-#import "NTYObserverUtility.h"
+#import "NTYKeyValueObserver.h"
 
 @interface NTYPlayerView : UIView
 @property (nonatomic, weak) AVPlayer *player;
@@ -473,24 +472,24 @@ NSArray<NSNumber*>*findIndexAndOffsetForPositonInDurations(NSTimeInterval positi
     [self.observers addObject:playFailedObserver];
 
    #if 0 /// 播放器不应该关心是否切入到后台
-    // https://developer.apple.com/library/ios/qa/qa1668/_index.html
-    NTYNotificationObserver *gd3 = [[NTYNotificationObserver alloc] initWithName:UIApplicationDidEnterBackgroundNotification source:nil action:^(NSNotification *notification) {
+        // https://developer.apple.com/library/ios/qa/qa1668/_index.html
+        NTYNotificationObserver *gd3 = [[NTYNotificationObserver alloc] initWithName:UIApplicationDidEnterBackgroundNotification source:nil action:^(NSNotification *notification) {
         @strongify(self);if (!self) {return;}
         if (!self.bIsPlayable) {
             return;
         }
         self.view.player = nil;
     }];
-    [self.observers addObject:gd3];
+        [self.observers addObject:gd3];
 
-    NTYNotificationObserver *gd4 = [[NTYNotificationObserver alloc] initWithName:UIApplicationDidBecomeActiveNotification source:nil action:^(NSNotification *notification) {
+        NTYNotificationObserver *gd4 = [[NTYNotificationObserver alloc] initWithName:UIApplicationDidBecomeActiveNotification source:nil action:^(NSNotification *notification) {
         @strongify(self);if (!self) {return;}
         if (!self.bIsPlayable) {
             return;
         }
         self.view.player = self.player;
     }];
-    [self.observers addObject:gd4];
+        [self.observers addObject:gd4];
    #endif // if 0
 
     NTYSingleKeyValueObserver *playerNeedBufferObserver = [[NTYSingleKeyValueObserver alloc] initWithKeyPath:@"playbackBufferEmpty" target:self.playingItem action:^(id newValue, id oldValue) {

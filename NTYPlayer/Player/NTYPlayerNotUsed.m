@@ -9,15 +9,14 @@
 #import "NTYPlayerNotUsed.h"
 @import AVFoundation;
 @import MediaPlayer;
-
-#import "NTYObserverUtility.h"
 #import "SpacemanBlocks.h"
+#import "NTYKeyValueObserver.h"
 
 #ifndef __FILENAME__
-#define __FILENAME__          (char*)(strrchr(__FILE__, '/') + 1)
-#define NSLogError(fmt,...)   NSLog(@"\033[fg255,0,0;" @"Error: %s:%d %s>" fmt  @"\033;", __FILENAME__, __LINE__, __FUNCTION__,##__VA_ARGS__);
-#define NSLogWarngin(fmt,...) NSLog(@"\033[fg255,255,0;" @"Warngin: %s:%d %s>"fmt @"\033;", __FILENAME__, __LINE__, __FUNCTION__,##__VA_ARGS__);
-#define NSLogInfo(fmt,...)    NSLog(@"\033[fg127,127,127;" @"Info: %s:%d %s>" fmt @"\033;", __FILENAME__, __LINE__, __FUNCTION__,##__VA_ARGS__);
+    #define __FILENAME__          (char*)(strrchr(__FILE__, '/') + 1)
+    #define NSLogError(fmt,...)   NSLog(@"\033[fg255,0,0;" @"Error: %s:%d %s>" fmt  @"\033;", __FILENAME__, __LINE__, __FUNCTION__,##__VA_ARGS__);
+    #define NSLogWarngin(fmt,...) NSLog(@"\033[fg255,255,0;" @"Warngin: %s:%d %s>"fmt @"\033;", __FILENAME__, __LINE__, __FUNCTION__,##__VA_ARGS__);
+    #define NSLogInfo(fmt,...)    NSLog(@"\033[fg127,127,127;" @"Info: %s:%d %s>" fmt @"\033;", __FILENAME__, __LINE__, __FUNCTION__,##__VA_ARGS__);
 #endif // ifndef __FILENAME__
 
 static const int kTimeout = 600;
@@ -193,16 +192,16 @@ static const int kTimeout = 600;
 
         // 下面这段没用，没有删除掉是因为: 此处为一个例子，可以在block内对RACDisposable调用dispose操作，已达到监听一次状态改变
         /*
-           __block RACDisposable *d = [self.playerItem rac_observeKeyPath:@"status"
-           options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
-           observer:self
-           block:^(id value, NSDictionary *change, BOOL causedByDealloc, BOOL affectedOnlyLastComponent) {
-           [GlobalUtils checkMainThread];
-           if ([value integerValue] == AVPlayerItemStatusReadyToPlay) {
-           self.state = self->_playPauseState;
-           }
-           [d dispose];
-           }];
+         * __block RACDisposable *d = [self.playerItem rac_observeKeyPath:@"status"
+         * options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+         * observer:self
+         * block:^(id value, NSDictionary *change, BOOL causedByDealloc, BOOL affectedOnlyLastComponent) {
+         * [GlobalUtils checkMainThread];
+         * if ([value integerValue] == AVPlayerItemStatusReadyToPlay) {
+         * self.state = self->_playPauseState;
+         * }
+         * [d dispose];
+         * }];
          */
     }];
 }
